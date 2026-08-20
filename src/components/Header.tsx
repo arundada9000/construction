@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '@/components/ThemeProvider';
+import { hapticTap, playNav } from '@/lib/haptics';
 import { Dictionary, Locale } from '@/i18n/dictionaries';
 
 interface HeaderProps {
@@ -126,8 +127,8 @@ export default function Header({ dict, lang }: HeaderProps) {
   };
 
   const headerBg = scrolled
-    ? { backgroundColor: 'var(--header-bg)', backdropFilter: 'blur(20px) saturate(180%)', WebkitBackdropFilter: 'blur(20px) saturate(180%)', borderBottom: '1px solid var(--border)', boxShadow: 'var(--header-shadow)' }
-    : { backgroundColor: 'transparent', backdropFilter: 'none', WebkitBackdropFilter: 'none', borderBottom: '1px solid transparent', boxShadow: 'none' };
+    ? { backgroundColor: 'var(--header-bg)', backdropFilter: 'blur(20px) saturate(180%)', WebkitBackdropFilter: 'blur(20px) saturate(180%)', borderBottom: '0.5px solid var(--separator)', boxShadow: 'none' }
+    : { backgroundColor: 'transparent', backdropFilter: 'none', WebkitBackdropFilter: 'none', borderBottom: '0.5px solid transparent', boxShadow: 'none' };
 
   return (
     <>
@@ -155,7 +156,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                 <Link
                   key={key}
                   href={buildHref(path)}
-                  className="group relative px-3 py-2 text-[13px] font-medium tracking-wide rounded-lg transition-all duration-200"
+                  className="group relative ios-touch px-3 py-2 text-[13px] font-medium tracking-wide rounded-xl transition-all duration-200 ios-press"
                   style={{
                     color: active ? 'var(--brand)' : 'var(--foreground)',
                     backgroundColor: active ? 'var(--brand-light)' : 'transparent',
@@ -196,8 +197,8 @@ export default function Header({ dict, lang }: HeaderProps) {
             <LangSwitch lang={lang} currentPath={currentPath} />
 
             <button
-              onClick={toggle}
-              className="relative flex h-9 w-9 items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted active:scale-90"
+              onClick={() => { hapticTap(); toggle(); }}
+              className="relative flex ios-touch items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted ios-press"
               aria-label="Toggle theme"
             >
               {mounted && (
@@ -253,8 +254,8 @@ export default function Header({ dict, lang }: HeaderProps) {
             <LangSwitch lang={lang} currentPath={currentPath} size="sm" />
 
             <button
-              onClick={toggle}
-              className="relative flex h-9 w-9 items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted active:scale-90"
+              onClick={() => { hapticTap(); toggle(); }}
+              className="relative flex ios-touch items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted ios-press"
               aria-label="Toggle theme"
             >
               {mounted && (
@@ -305,7 +306,7 @@ export default function Header({ dict, lang }: HeaderProps) {
 
       {/* Mobile bottom nav */}
       {mounted && (
-        <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+        <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden ios-glass-bar" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
           <div
             className="mx-3 mb-3 flex items-center justify-around rounded-2xl border border-border px-2 py-2"
             style={{
@@ -321,7 +322,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                 <Link
                   key={key}
                   href={buildHref(path)}
-                  className="flex flex-col items-center gap-0.5 rounded-xl px-3 py-1.5 transition-all duration-200 active:scale-90"
+                  className="flex flex-col items-center gap-0.5 rounded-xl px-3 py-1.5 transition-all duration-200 ios-press ios-touch"
                   style={{
                     color: active ? 'var(--brand)' : 'var(--muted-foreground)',
                   }}
@@ -354,7 +355,7 @@ export default function Header({ dict, lang }: HeaderProps) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed z-50 flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl active:scale-95 md:bottom-6 md:right-6"
+        className="fixed z-50 flex ios-touch items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-xl ios-press md:bottom-6 md:right-6"
         style={{
           bottom: 'calc(env(safe-area-inset-bottom, 0px) + 5.5rem)',
           right: '1rem',
