@@ -39,10 +39,10 @@
     "title": "Equipment Rental Support",
     "subtitle": "We also provide selected construction equipment for rent to support site execution and project delivery.",
     "items": [
-      { "code": "EX", "title": "Excavator", "description": "Excavation and heavy earthmoving support." },
-      { "code": "RC", "title": "Roller Compactor", "description": "Reliable compaction for base and subgrade." },
-      { "code": "TP", "title": "Tipper", "description": "Material haulage for active project sites." },
-      { "code": "WT", "title": "Water Tanker", "description": "Water support for dust control and works." }
+      { "code": "EX", "title": "Excavator", "description": "Excavation and heavy earthmoving support.", "image": "/assets/images/equipment/excavator.jpg" },
+      { "code": "RC", "title": "Roller Compactor", "description": "Reliable compaction for base and subgrade.", "image": "/assets/images/equipment/roller.jpg" },
+      { "code": "TP", "title": "Tipper", "description": "Material haulage for active project sites.", "image": "/assets/images/equipment/tipper.jpg" },
+      { "code": "BL", "title": "Backhoe Loader", "description": "Versatile digging and loading capability.", "image": "/assets/images/equipment/backhoe.jpg" }
     ],
     "cta": "Explore Equipment Rental"
   },

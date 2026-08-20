@@ -39,10 +39,10 @@
     "title": "उपकरण भाडा सहयोग",
     "subtitle": "हामी साइट कार्यान्वयन र परियोजना वितरणलाई सहयोग गर्न चयन गरिएका निर्माण उपकरणहरू पनि उपलब्ध गराउँछौं।",
     "items": [
-      { "code": "EX", "title": "एक्स्काभेटर", "description": "उत्खनन र भारी माटो कार्य सहयोग।" },
-      { "code": "RC", "title": "रोलर कम्प्याक्टर", "description": "आधार र सबग्रेडको लागि भरपर्दो कम्प्याक्सन।" },
-      { "code": "TP", "title": "टिपर", "description": "सक्रिय परियोजना साइटहरूको लागि सामग्री ढुवानी।" },
-      { "code": "WT", "title": "वाटर ट्याङ्कर", "description": "धुलो नियन्त्रण र कार्यहरूको लागि पानी सहयोग।" }
+      { "code": "EX", "title": "एक्स्काभेटर", "description": "उत्खनन र भारी माटो कार्य सहयोग।", "image": "/assets/images/equipment/excavator.jpg" },
+      { "code": "RC", "title": "रोलर कम्प्याक्टर", "description": "आधार र सबग्रेडको लागि भरपर्दो कम्प्याक्सन।", "image": "/assets/images/equipment/roller.jpg" },
+      { "code": "TP", "title": "टिपर", "description": "सक्रिय परियोजना साइटहरूको लागि सामग्री ढुवानी।", "image": "/assets/images/equipment/tipper.jpg" },
+      { "code": "BL", "title": "ब्याकहो लोडर", "description": "बहुमुखी खनन र लोडिङ क्षमता।", "image": "/assets/images/equipment/backhoe.jpg" }
     ],
     "cta": "उपकरण भाडा अन्वेषण गर्नुहोस्"
   },

@@ -164,12 +164,30 @@ export default async function HomePage({ params }: Props) {
           <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {dict.equipmentPreview.items.map((eq, i) => (
               <AnimatedSection key={i} delay={i * 100} direction="up">
-                <div className="card-hover rounded-2xl border bg-[var(--card)] p-6 text-center" style={{ borderColor: 'var(--border)' }}>
-                  <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[var(--brand-light)] text-base font-bold text-[var(--brand)]">
-                    {eq.code}
+                <div className="ios-card ios-press overflow-hidden h-full group">
+                  {eq.image && (
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <img
+                        src={eq.image}
+                        alt={eq.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                      <span className="absolute top-3 left-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-bold">
+                        {eq.code}
+                      </span>
+                    </div>
+                  )}
+                  <div className="p-4">
+                    {!eq.image && (
+                      <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-brand-light text-brand text-sm font-bold mb-2">
+                        {eq.code}
+                      </span>
+                    )}
+                    <h3 className="text-[17px] font-semibold">{eq.title}</h3>
+                    <p className="mt-1.5 text-[13px] text-muted-foreground leading-relaxed">{eq.description}</p>
                   </div>
-                  <h3 className="mt-4 text-lg font-semibold">{eq.title}</h3>
-                  <p className="mt-2 text-sm text-[var(--muted-foreground)]">{eq.description}</p>
                 </div>
               </AnimatedSection>
             ))}
