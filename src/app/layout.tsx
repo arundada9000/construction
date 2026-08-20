@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Construction Company Pvt. Ltd.',
+  title: 'Sajilo Digital Pvt. Ltd.',
   description:
-    'Civil construction, contracting, and project management with a focus on quality, safety, and accountable delivery.',
+    'Digital solutions, web development, and project management with a focus on quality, innovation, and accountable delivery.',
 };
 
 export default function RootLayout({

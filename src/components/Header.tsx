@@ -142,9 +142,9 @@ export default function Header({ dict, lang }: HeaderProps) {
             href={buildHref('/')}
             className="flex items-center gap-0.5 text-lg font-bold tracking-tight transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
           >
-            <span className="text-foreground">Construction</span>
+            <span className="text-foreground">Sajilo</span>
             <span className="text-brand">.</span>
-            <span className="font-semibold text-foreground">Company</span>
+            <span className="font-semibold text-foreground">Digital</span>
           </Link>
 
           {/* Desktop nav */}
@@ -350,7 +350,7 @@ export default function Header({ dict, lang }: HeaderProps) {
 
       {/* Floating WhatsApp button */}
       <a
-        href="https://wa.me/9779856014022?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20construction%20project."
+        href="https://wa.me/9779811420975?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20construction%20project."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
