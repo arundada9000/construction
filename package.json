@@ -1,7 +1,18 @@
 {
-  "name": "client-website",
-  "version": "0.1.0",
+  "name": "construction-company-website",
+  "version": "1.0.0",
+  "description": "Construction Company Pvt. Ltd. - Corporate website with bilingual support (EN/NP), dark/light theme, and modern UI",
   "private": true,
+  "author": {
+    "name": "Arun Neupane",
+    "email": "arunneupane0000@gmail.com",
+    "url": "https://arunneupane.vercel.app"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "private",
+    "url": ""
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
