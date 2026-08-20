@@ -151,7 +151,7 @@ export default function Header({ dict, lang }: HeaderProps) {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-1 md:flex">
+          <div className="hidden items-center gap-1 lg:flex">
             {navLinks.map(({ key, path }) => {
               const active = isActive(path);
               return (
@@ -196,7 +196,7 @@ export default function Header({ dict, lang }: HeaderProps) {
           </div>
 
           {/* Desktop right section */}
-          <div className="hidden items-center gap-3 md:flex">
+          <div className="hidden items-center gap-3 lg:flex">
             <LangSwitch lang={lang} currentPath={currentPath} />
 
             <button
@@ -264,7 +264,7 @@ export default function Header({ dict, lang }: HeaderProps) {
           </div>
 
           {/* Mobile top bar controls */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <LangSwitch lang={lang} currentPath={currentPath} size="sm" />
 
             <button
@@ -331,7 +331,7 @@ export default function Header({ dict, lang }: HeaderProps) {
 
       {/* Mobile bottom nav */}
       {mounted && (
-        <nav className="fixed bottom-0 left-0 right-0 z-50 md:hidden ios-glass-bar" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+        <nav className="fixed bottom-0 left-0 right-0 z-50 lg:hidden ios-glass-bar" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
           <div
             className="mx-3 mb-3 flex items-center justify-around rounded-2xl border border-border px-2 py-2"
             style={{
@@ -381,7 +381,7 @@ export default function Header({ dict, lang }: HeaderProps) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="fixed z-50 flex ios-touch items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-xl ios-press md:bottom-6 md:right-6"
+        className="fixed z-50 flex ios-touch items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg transition-all duration-200 hover:scale-110 hover:shadow-xl ios-press lg:bottom-6 lg:right-6"
         style={{
           bottom: 'calc(env(safe-area-inset-bottom, 0px) + 5.5rem)',
           right: '1rem',

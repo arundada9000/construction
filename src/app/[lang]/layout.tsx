@@ -117,7 +117,7 @@ export default async function LangLayout({
         <LocalBusinessJsonLd />
         <WebsiteJsonLd />
         <Header dict={dict} lang={locale} />
-        <main id="content" className="flex-1 pb-20 md:pb-0">
+        <main id="content" className="flex-1 pb-20 lg:pb-0">
           <PageTransition>{children}</PageTransition>
         </main>
         <Footer dict={dict} lang={locale} />
