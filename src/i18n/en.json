@@ -1,0 +1,191 @@
+{
+  "meta": {
+    "title": "Home | Construction Company Pvt. Ltd.",
+    "description": "Civil construction, contracting, and project management with a focus on quality, safety, and accountable delivery."
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "services": "Services",
+    "equipmentRental": "Equipment Rental",
+    "projects": "Projects",
+    "resources": "Resources",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Trusted Construction Partner",
+    "title": "Building Infrastructure with Strength & Precision",
+    "subtitle": "From hospitals and commercial buildings to roads, bridges, and hydropower civil works , we deliver projects with quality, safety, and long-term value.",
+    "ctaPrimary": "Request Consultation",
+    "ctaSecondary": "View Our Projects"
+  },
+  "stats": [
+    { "value": "1978", "label": "Established" },
+    { "value": "2002", "label": "Pvt. Ltd. Since" },
+    { "value": "NPR 460M+", "label": "Avg. Annual Turnover" },
+    { "value": "Public & Private Sectors", "label": "Serving" }
+  ],
+  "servicesPreview": {
+    "title": "What We Build",
+    "items": [
+      { "title": "Building Construction", "description": "End-to-end delivery for hospitals, hotels, schools, factories, and commercial facilities." },
+      { "title": "Roads & Infrastructure", "description": "Road upgrading, drainage, and site development engineered for terrain and durability." },
+      { "title": "Bridges & Civil Structures", "description": "Bridge structures, culverts, and RCC works delivered to specified standards." },
+      { "title": "Tunnels & Hydropower Civil Works", "description": "Tunnel excavation support, portals, and hydropower civil works with strict safety control." }
+    ],
+    "cta": "Explore All Services"
+  },
+  "equipmentPreview": {
+    "title": "Equipment Rental Support",
+    "subtitle": "We also provide selected construction equipment for rent to support site execution and project delivery.",
+    "items": [
+      { "code": "EX", "title": "Excavator", "description": "Excavation and heavy earthmoving support." },
+      { "code": "RC", "title": "Roller Compactor", "description": "Reliable compaction for base and subgrade." },
+      { "code": "TP", "title": "Tipper", "description": "Material haulage for active project sites." },
+      { "code": "WT", "title": "Water Tanker", "description": "Water support for dust control and works." }
+    ],
+    "cta": "Explore Equipment Rental"
+  },
+  "projectsPreview": {
+    "title": "Projects That Define Our Capability",
+    "subtitle": "Demonstrated delivery across hospital, institutional, and infrastructure projects.",
+    "cta": "View All Projects"
+  },
+  "insights": {
+    "title": "Latest Construction Insights",
+    "subtitle": "Expert perspectives on infrastructure, sustainability, safety, and innovation in Nepali construction.",
+    "cta": "View All Articles"
+  },
+  "qualitySafety": {
+    "title": "Quality & Safety at Every Stage",
+    "points": [
+      "Dedicated safety officers & PPE",
+      "QA/QC at every milestone",
+      "Insurance & compliance standards",
+      "Structured reporting & supervision"
+    ],
+    "cta": "Our Quality Standards"
+  },
+  "ctaBanner": {
+    "title": "Let's build infrastructure that stands the test of time.",
+    "subtitle": "Partner with an experienced construction company trusted since 1978.",
+    "cta": "Contact Our Team"
+  },
+  "footer": {
+    "trust": {
+      "title": "Trust & Compliance",
+      "description": "Safety, quality, and accountability are embedded into every stage of delivery.",
+      "points": [
+        "Dedicated safety officers & PPE",
+        "QA/QC checks at every milestone",
+        "Insurance & compliance standards"
+      ]
+    },
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "registeredOffice": "Registered office",
+    "cityOffice": "City office",
+    "phone": "Phone",
+    "email": "Email",
+    "copyright": "Surya Construction Company Pvt. Ltd."
+  },
+  "about": {
+    "badge": "Since 1978",
+    "title": "A Legacy of Trusted Construction",
+    "subtitle": "We have grown from a local construction firm into a trusted partner for institutional, commercial, and infrastructure projects.",
+    "journey": {
+      "title": "Our Journey",
+      "items": [
+        { "year": "1978", "title": "Established", "description": "Established as a local construction firm, delivering early construction works with a focus on workmanship." },
+        { "year": "2002", "title": "Upgraded", "description": "Upgraded and registered as a Pvt. Ltd., expanding capacity, manpower, and machinery." },
+        { "year": "Today", "title": "Institutional Delivery", "description": "Delivering complex buildings, roads, bridges, and hydropower civil works with structured safety and quality systems." }
+      ]
+    },
+    "leadership": {
+      "title": "Leadership",
+      "name": "Managing Director",
+      "description": "Leadership grounded in responsibility, disciplined execution, and long-term client trust."
+    },
+    "whatWeDeliver": {
+      "title": "What We Deliver",
+      "items": [
+        { "title": "Buildings", "description": "Hospitals, hotels, commercial, and institutional buildings." },
+        { "title": "Roads & Infrastructure", "description": "Road construction, upgrading, and infrastructure development." },
+        { "title": "Bridges & Civil Structures", "description": "Bridges, RCC and steel structures, and complex civil works." },
+        { "title": "Hydropower & Tunnel Civil Works", "description": "Tunnels, waterways, and powerhouse civil structures." }
+      ]
+    },
+    "highlights": [
+      "Public & Private Sector Experience",
+      "Multi-sector Portfolio",
+      "Safety & Quality Driven Delivery",
+      "Trusted Since 1978"
+    ]
+  },
+  "servicesPage": {
+    "title": "Construction Services Delivered with Precision",
+    "subtitle": "We provide comprehensive construction and infrastructure services supported by experienced professionals, modern equipment, and strict quality standards.",
+    "coreServices": "Core Services",
+    "process": {
+      "title": "Our Construction Process",
+      "steps": [
+        { "title": "Consultation & Planning", "description": "Understanding project requirements, feasibility, and execution strategy." },
+        { "title": "Engineering & Mobilization", "description": "Design coordination, resource planning, and site mobilization." },
+        { "title": "Execution & Quality Control", "description": "Controlled construction with strict safety and QA/QC checks." },
+        { "title": "Handover & Support", "description": "Timely handover with documentation and post-completion support." }
+      ]
+    },
+    "whyTrust": {
+      "title": "Why Clients Trust Us",
+      "items": [
+        { "title": "Decades of Construction Experience", "description": "Government, healthcare, and institutional projects delivered with disciplined execution since 1978." },
+        { "title": "Skilled Technical Team & Equipment", "description": "Skilled engineers, site teams, and equipment matched to complex terrain and scope." },
+        { "title": "Proven Safety & Quality Systems", "description": "Audited QA/QC practices, safety protocols, and compliance documentation on every job." }
+      ]
+    }
+  },
+  "equipmentPage": {
+    "badge": "Equipment Rental",
+    "title": "Construction Equipment Available for Rent",
+    "subtitle": "We provide a range of construction equipment for rental to support infrastructure, site development, roadwork, excavation, and civil construction projects.",
+    "fleet": "Available Equipment Fleet",
+    "fleetDescription": "Equipment is available based on project scope, site conditions, and required timeline.",
+    "whyRent": {
+      "title": "Why Rent from Us",
+      "items": [
+        { "title": "Reliable equipment support", "description": "Ready-to-deploy machines coordinated around your site and schedule." },
+        { "title": "Suitable for infrastructure and civil works", "description": "Fleet options aligned for roadwork, excavation, and site development." },
+        { "title": "Backed by execution experience", "description": "Operational support shaped by decades of practical construction delivery." },
+        { "title": "Flexible rental support", "description": "Rental arrangements matched to project timelines, phases, and scope." }
+      ]
+    }
+  },
+  "projectsPage": {
+    "title": "Our Projects",
+    "subtitle": "A showcase of completed and ongoing projects demonstrating our capability across sectors.",
+    "completed": "Completed",
+    "ongoing": "Ongoing"
+  },
+  "contactPage": {
+    "badge": "Contact",
+    "title": "Contact Us",
+    "subtitle": "Share your project scope and timeline. We respond promptly with a no-obligation discussion.",
+    "offices": {
+      "registered": "Registered Office",
+      "city": "City Office"
+    },
+    "details": "Contact Details",
+    "quickContact": {
+      "title": "Quick Contact",
+      "subtitle": "Reach us instantly on WhatsApp or email. We respond promptly.",
+      "whatsapp": "Chat on WhatsApp",
+      "email": "Send an Email"
+    },
+    "map": {
+      "title": "Our Office Location",
+      "subtitle": "Visit our office."
+    },
+    "ctaTitle": "Let's discuss your next construction project.",
+    "ctaSubtitle": "Reach out today for a no-obligation discussion."
+  }
+}
