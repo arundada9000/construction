@@ -8,31 +8,37 @@ const equipment = [
     code: 'GR',
     title: 'Grader',
     description: 'Precision grading and leveling for roadbeds, embankments, and site preparation with fine tolerance control.',
+    image: '/assets/images/equipment/grader.jpg',
   },
   {
     code: 'RC',
     title: 'Roller Compactor',
     description: 'High-force compaction for subgrade, base course, and asphalt layers ensuring structural density.',
+    image: '/assets/images/equipment/roller.jpg',
   },
   {
     code: 'EX',
     title: 'Excavator',
     description: 'Heavy-duty excavation, trenching, and material handling across varied terrain and site conditions.',
+    image: '/assets/images/equipment/excavator.jpg',
   },
   {
     code: 'BL',
     title: 'Backhoe Loader',
     description: 'Versatile digging, loading, and material placement with front loader and rear backhoe attachment.',
+    image: '/assets/images/equipment/backhoe.jpg',
   },
   {
     code: 'TR',
     title: 'Tractor',
     description: 'Multi-purpose pulling and hauling power for agricultural and construction site logistics.',
+    image: '/assets/images/equipment/tractor.jpg',
   },
   {
     code: 'TP',
     title: 'Tipper',
     description: 'Efficient material haulage and dumping for aggregate, soil, and debris transport on active sites.',
+    image: '/assets/images/equipment/tipper.jpg',
   },
   {
     code: 'WT',
@@ -116,7 +122,7 @@ export default async function EquipmentRentalPage({ params }: Props) {
                     Contact for Availability
                   </a>
                   <a
-                    href="https://wa.me/9779851234567"
+                    href="https://wa.me/9779811420975"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="btn-secondary inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white border-none"
@@ -157,39 +163,66 @@ export default async function EquipmentRentalPage({ params }: Props) {
             </p>
           </AnimatedSection>
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {equipment.map((item, index) => (
               <AnimatedSection
                 key={item.code}
                 delay={index * 75}
                 direction="up"
               >
-                <div className="card-hover group rounded-2xl border border-[var(--border)] bg-[var(--card)] p-6 h-full">
-                  <div className="w-14 h-14 rounded-full bg-[var(--brand)]/10 flex items-center justify-center mb-4 group-hover:bg-[var(--brand)]/20 transition-colors">
-                    <span className="text-lg font-bold text-[var(--brand)]">
-                      {item.code}
-                    </span>
+                {item.image ? (
+                  <div className="ios-card ios-press overflow-hidden h-full group">
+                    <div className="relative aspect-[4/3] overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                      <span className="absolute top-3 left-3 inline-flex items-center justify-center w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm text-white text-xs font-bold">
+                        {item.code}
+                      </span>
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-[17px] font-semibold text-foreground">
+                        {item.title}
+                      </h3>
+                      <p className="mt-1.5 text-[13px] text-muted-foreground leading-relaxed line-clamp-2">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
-                  <h3 className="text-lg font-semibold text-foreground">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-[var(--muted-foreground)] leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+                ) : (
+                  <div className="ios-card ios-press p-5 h-full">
+                    <div className="flex items-start gap-3">
+                      <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-brand-light text-brand text-sm font-bold shrink-0">
+                        {item.code}
+                      </span>
+                      <div>
+                        <h3 className="text-[17px] font-semibold text-foreground">
+                          {item.title}
+                        </h3>
+                        <p className="mt-1 text-[13px] text-muted-foreground leading-relaxed line-clamp-2">
+                          {item.description}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </AnimatedSection>
             ))}
 
             {/* And Many More */}
             <AnimatedSection delay={equipment.length * 75} direction="up">
-              <div className="card-hover group rounded-2xl border border-[var(--brand)]/20 bg-[var(--brand)]/5 p-6 h-full flex flex-col items-center justify-center text-center">
-                <div className="w-14 h-14 rounded-full bg-[var(--brand)]/15 flex items-center justify-center mb-4">
-                  <span className="text-lg font-bold text-[var(--brand)]">+</span>
-                </div>
-                <h3 className="text-lg font-semibold text-[var(--brand)]">
+              <div className="ios-card ios-press p-5 h-full flex flex-col items-center justify-center text-center border-dashed border-brand/30 bg-brand/5">
+                <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-brand/10 text-brand text-lg font-bold mb-3">
+                  +
+                </span>
+                <h3 className="text-[17px] font-semibold text-brand">
                   And Many More
                 </h3>
-                <p className="mt-2 text-sm text-[var(--muted-foreground)] leading-relaxed">
+                <p className="mt-1.5 text-[13px] text-muted-foreground leading-relaxed">
                   Additional equipment available on request. Contact us for your specific project requirements.
                 </p>
               </div>
@@ -199,7 +232,7 @@ export default async function EquipmentRentalPage({ params }: Props) {
       </section>
 
       {/* Why Rent From Us */}
-      <section className="py-20 md:py-28 bg-[var(--card)]">
+      <section className="section-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection delay={0} direction="up">
             <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground text-center">
@@ -207,23 +240,23 @@ export default async function EquipmentRentalPage({ params }: Props) {
             </h2>
           </AnimatedSection>
 
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {dict.equipmentPage.whyRent.items.map((item, index) => (
               <AnimatedSection
                 key={item.title}
                 delay={index * 100}
                 direction="up"
               >
-                <div className="text-center">
-                  <div className="w-12 h-12 rounded-full bg-[var(--brand)]/10 flex items-center justify-center mx-auto mb-4">
-                    <span className="text-[var(--brand)]">
+                <div className="ios-card ios-press p-5 text-center h-full">
+                  <div className="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center mx-auto mb-3">
+                    <span className="text-brand">
                       <CheckIcon />
                     </span>
                   </div>
-                  <h3 className="text-base font-semibold text-foreground">
+                  <h3 className="text-[17px] font-semibold text-foreground">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm text-[var(--muted-foreground)] leading-relaxed">
+                  <p className="mt-1.5 text-[13px] text-muted-foreground leading-relaxed">
                     {item.description}
                   </p>
                 </div>
@@ -249,7 +282,7 @@ export default async function EquipmentRentalPage({ params }: Props) {
           <AnimatedSection delay={300} direction="up">
             <div className="mt-8 flex flex-wrap justify-center gap-4">
               <a
-                href="https://wa.me/9779851234567"
+                href="https://wa.me/9779811420975"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-secondary inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1da851] text-white border-none"
