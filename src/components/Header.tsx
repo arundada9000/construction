@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '@/components/ThemeProvider';
-import { hapticTap, playNav } from '@/lib/haptics';
+import { hapticTap, playTap, playNav } from '@/lib/haptics';
 import { Dictionary, Locale } from '@/i18n/dictionaries';
 
 interface HeaderProps {
@@ -157,6 +157,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                   key={key}
                   href={buildHref(path)}
                   className="group relative ios-touch px-3 py-2 text-[13px] font-medium tracking-wide rounded-xl transition-all duration-200 ios-press"
+                  onClick={() => { hapticTap(); playNav(); }}
                   style={{
                     color: active ? 'var(--brand)' : 'var(--foreground)',
                     backgroundColor: active ? 'var(--brand-light)' : 'transparent',
@@ -197,7 +198,7 @@ export default function Header({ dict, lang }: HeaderProps) {
             <LangSwitch lang={lang} currentPath={currentPath} />
 
             <button
-              onClick={() => { hapticTap(); toggle(); }}
+              onClick={() => { hapticTap(); playTap(); toggle(); }}
               className="relative flex ios-touch items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted ios-press"
               aria-label="Toggle theme"
             >
@@ -254,7 +255,7 @@ export default function Header({ dict, lang }: HeaderProps) {
             <LangSwitch lang={lang} currentPath={currentPath} size="sm" />
 
             <button
-              onClick={() => { hapticTap(); toggle(); }}
+              onClick={() => { hapticTap(); playTap(); toggle(); }}
               className="relative flex ios-touch items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted ios-press"
               aria-label="Toggle theme"
             >
@@ -323,6 +324,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                   key={key}
                   href={buildHref(path)}
                   className="flex flex-col items-center gap-0.5 rounded-xl px-3 py-1.5 transition-all duration-200 ios-press ios-touch"
+                  onClick={() => { hapticTap(); playNav(); }}
                   style={{
                     color: active ? 'var(--brand)' : 'var(--muted-foreground)',
                   }}
