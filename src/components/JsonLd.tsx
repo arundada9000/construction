@@ -11,7 +11,7 @@ export default function JsonLd({ data }: JsonLdProps) {
   );
 }
 
-const BASE_URL = 'https://sajilodigital.com.np';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
 
 export function OrganizationJsonLd() {
   return (

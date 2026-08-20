@@ -20,11 +20,11 @@ export async function generateMetadata({
   return {
     title: dict.insights.title,
     description: dict.insights.subtitle,
-    alternates: { canonical: `https://sajilodigital.com.np/${lang}/blog` },
+    alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/blog` },
     openGraph: {
       title: dict.insights.title,
       description: dict.insights.subtitle,
-      url: `https://sajilodigital.com.np/${lang}/blog`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/blog`,
     },
   };
 }

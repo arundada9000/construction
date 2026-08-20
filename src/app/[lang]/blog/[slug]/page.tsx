@@ -41,7 +41,7 @@ export default async function BlogPostPage({ params }: Props) {
   const date = lang === 'ne' ? post.dateNe : post.dateEn;
   const author = lang === 'ne' ? post.authorNe : post.authorEn;
   const content = lang === 'ne' ? post.contentNe : post.contentEn;
-  const shareUrl = `https://sajilodigital.com.np/${lang}/blog/${post.slug}`;
+  const shareUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/blog/${post.slug}`;
 
   return (
     <>

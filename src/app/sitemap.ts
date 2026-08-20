@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { posts } from '@/lib/blog-posts';
 
-const BASE_URL = 'https://sajilodigital.com.np';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
 
 const staticPages = [
   { path: '', priority: 1.0, changefreq: 'weekly' as const },

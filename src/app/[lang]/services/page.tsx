@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   return {
     title,
     description: desc,
-    alternates: { canonical: `https://sajilodigital.com.np/${lang}/services` },
-    openGraph: { title, description: desc, url: `https://sajilodigital.com.np/${lang}/services` },
+    alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/services` },
+    openGraph: { title, description: desc, url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/services` },
   };
 }
 
