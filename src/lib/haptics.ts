@@ -80,6 +80,23 @@ export function playNav() {
   osc.stop(ctx.currentTime + 0.08);
 }
 
+export function playClink() {
+  const ctx = getAudioCtx();
+  if (!ctx) return;
+  [2400, 3200].forEach((freq, i) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+    osc.frequency.value = freq;
+    osc.type = 'sine';
+    gain.gain.value = 0.03;
+    osc.start(ctx.currentTime + i * 0.01);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + i * 0.01 + 0.08);
+    osc.stop(ctx.currentTime + i * 0.01 + 0.08);
+  });
+}
+
 export function handlePress(feedback: 'tap' | 'nav' | 'success' = 'tap') {
   hapticTap();
   if (feedback === 'tap') playTap();

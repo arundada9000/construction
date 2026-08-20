@@ -89,7 +89,7 @@ export default async function ContactPage({ params }: Props) {
       </section>
 
       {/* ── Office Cards ── */}
-      <section className="pb-24">
+      <section className="py-14 sm:py-16 md:py-20 lg:py-24">
         <div className="mx-auto max-w-6xl px-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             <AnimatedSection delay={0} direction="up">
@@ -157,7 +157,7 @@ export default async function ContactPage({ params }: Props) {
       </section>
 
       {/* ── Quick Contact ── */}
-      <section className="section-muted pb-24">
+      <section className="section-muted py-14 sm:py-16 md:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection delay={0} direction="up" className="text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -213,7 +213,7 @@ export default async function ContactPage({ params }: Props) {
       </section>
 
       {/* ── Map Section ── */}
-      <section className="pb-24">
+      <section className="py-14 sm:py-16 md:py-20 lg:py-24">
         <div className="mx-auto max-w-5xl px-6">
           <AnimatedSection delay={0} direction="up" className="text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -246,7 +246,7 @@ export default async function ContactPage({ params }: Props) {
       </section>
 
       {/* ── CTA Banner ── */}
-      <section className="section-gradient pb-24">
+      <section className="section-gradient py-14 sm:py-16 md:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <AnimatedSection delay={0} direction="up">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">

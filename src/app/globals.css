@@ -480,6 +480,58 @@ a[href] {
   cursor: pointer;
 }
 
+/* ===== CRANE TRANSITION ===== */
+@keyframes craneCableDrop {
+  0% {
+    top: 0;
+    height: 0;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  60% {
+    top: 0;
+    height: 45vh;
+  }
+  75% {
+    top: 0;
+    height: 42vh;
+  }
+  85% {
+    top: 0;
+    height: 45vh;
+  }
+  100% {
+    top: 0;
+    height: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes craneHookDrop {
+  0% {
+    top: -32px;
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  60% {
+    top: 45vh;
+  }
+  75% {
+    top: 42vh;
+  }
+  85% {
+    top: 45vh;
+  }
+  100% {
+    top: -32px;
+    opacity: 0;
+  }
+}
+
 /* ===== REDUCED MOTION ===== */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
