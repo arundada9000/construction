@@ -1,5 +1,6 @@
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import AnimatedSection from '@/components/AnimatedSection';
+import TextReveal from '@/components/TextReveal';
 
 type Props = { params: Promise<{ lang: string }> };
 
@@ -235,9 +236,11 @@ export default async function EquipmentRentalPage({ params }: Props) {
       <section className="section-muted py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection delay={0} direction="up">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground text-center">
-              {dict.equipmentPage.whyRent.title}
-            </h2>
+            <TextReveal
+              text={dict.equipmentPage.whyRent.title}
+              as="h2"
+              className="text-3xl md:text-4xl font-bold tracking-tight text-foreground text-center"
+            />
           </AnimatedSection>
 
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -247,13 +250,13 @@ export default async function EquipmentRentalPage({ params }: Props) {
                 delay={index * 100}
                 direction="up"
               >
-                <div className="ios-card ios-press p-5 text-center h-full">
-                  <div className="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center mx-auto mb-3">
-                    <span className="text-brand">
+                <div className="ios-card ios-press p-5 text-center h-full group cursor-default transition-all duration-300 hover:shadow-md hover:-translate-y-1">
+                  <div className="w-10 h-10 rounded-full bg-brand-light flex items-center justify-center mx-auto mb-3 transition-all duration-300 group-hover:scale-110 group-hover:bg-brand group-hover:text-white">
+                    <span className="text-brand group-hover:text-white transition-colors duration-300">
                       <CheckIcon />
                     </span>
                   </div>
-                  <h3 className="text-[17px] font-semibold text-foreground">
+                  <h3 className="text-[17px] font-semibold text-foreground transition-colors duration-300 group-hover:text-brand">
                     {item.title}
                   </h3>
                   <p className="mt-1.5 text-[13px] text-muted-foreground leading-relaxed">

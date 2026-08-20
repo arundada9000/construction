@@ -2,6 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import AnimatedSection from '@/components/AnimatedSection';
+import TextReveal from '@/components/TextReveal';
 import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 type Props = { params: Promise<{ lang: string }> };
@@ -113,9 +114,11 @@ export default async function AboutPage({ params }: Props) {
       <section className="py-20 lg:py-28 bg-muted/40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection delay={0} direction="up" className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground">
-              {about.journey.title}
-            </h2>
+            <TextReveal
+              text={about.journey.title}
+              as="h2"
+              className="text-3xl sm:text-4xl font-bold tracking-tight text-foreground"
+            />
           </AnimatedSection>
 
           {/* Mobile: vertical timeline */}
@@ -123,12 +126,12 @@ export default async function AboutPage({ params }: Props) {
             <div className="absolute left-3 top-2 bottom-2 w-px bg-border" />
             {about.journey.items.map((item, i) => (
               <AnimatedSection key={item.year} delay={i * 150} direction="left">
-                <div className="relative mb-10 last:mb-0">
-                  <div className="absolute -left-5 top-1 w-7 h-7 rounded-full bg-brand flex items-center justify-center ring-4 ring-muted/40">
+                <div className="relative mb-10 last:mb-0 group">
+                  <div className="absolute -left-5 top-1 w-7 h-7 rounded-full bg-brand flex items-center justify-center ring-4 ring-muted/40 transition-transform duration-300 group-hover:scale-125">
                     <span className="text-[10px] font-bold text-white leading-none">{i + 1}</span>
                   </div>
-                  <div className="ml-4">
-                    <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-brand text-white mb-3">
+                  <div className="ml-4 ios-press rounded-2xl p-4 transition-all duration-300 hover:bg-card hover:shadow-sm cursor-default">
+                    <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-brand text-white mb-3 transition-transform duration-300 group-hover:scale-105">
                       {item.year}
                     </span>
                     <h3 className="text-xl font-semibold text-foreground mb-2">{item.title}</h3>
@@ -144,14 +147,14 @@ export default async function AboutPage({ params }: Props) {
             <div className="absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px bg-border" />
             {about.journey.items.map((item, i) => (
               <AnimatedSection key={item.year} delay={i * 180} direction="up">
-                <div className="text-center relative">
-                  <div className="w-10 h-10 rounded-full bg-brand mx-auto mb-6 flex items-center justify-center ring-4 ring-muted/40 relative z-10">
+                <div className="text-center relative group cursor-default">
+                  <div className="w-10 h-10 rounded-full bg-brand mx-auto mb-6 flex items-center justify-center ring-4 ring-muted/40 relative z-10 transition-all duration-300 group-hover:scale-125 group-hover:ring-brand/20">
                     <span className="text-xs font-bold text-white leading-none">{i + 1}</span>
                   </div>
-                  <span className="inline-block px-4 py-1 rounded-full text-sm font-bold bg-brand text-white mb-4">
+                  <span className="inline-block px-4 py-1 rounded-full text-sm font-bold bg-brand text-white mb-4 transition-transform duration-300 group-hover:scale-110">
                     {item.year}
                   </span>
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{item.title}</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-3 transition-colors duration-300 group-hover:text-brand">{item.title}</h3>
                   <p className="text-muted-foreground leading-relaxed max-w-xs mx-auto">{item.description}</p>
                 </div>
               </AnimatedSection>

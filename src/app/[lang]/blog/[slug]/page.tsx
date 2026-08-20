@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import { posts, getPostBySlug } from '@/lib/blog-posts';
 import AnimatedSection from '@/components/AnimatedSection';
+import TextReveal from '@/components/TextReveal';
 import { ArticleJsonLd } from '@/components/JsonLd';
 
 type Props = {
@@ -60,9 +61,12 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="mt-1 text-sm text-white/60">{author}</p>
           </AnimatedSection>
           <AnimatedSection delay={100} direction="up">
-            <h1 className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl">
-              {title}
-            </h1>
+            <TextReveal
+              text={title}
+              as="h1"
+              delay={200}
+              className="mt-3 text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl"
+            />
           </AnimatedSection>
         </div>
       </section>

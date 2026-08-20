@@ -164,36 +164,36 @@ export default function Footer({ dict, lang }: FooterProps) {
               <div className="ios-separator" />
               <a
                 href="tel:+9779811420975"
-                className="flex items-center justify-between px-4 py-3.5 hover:bg-muted/50 transition-all duration-200 ios-press"
+                className="flex items-center justify-between px-4 py-3.5 rounded-xl hover:bg-muted/50 transition-all duration-300 ios-press group"
                 onClick={() => { hapticTap(); playTap(); }}
               >
                 <div>
-                  <span className="text-[13px] font-medium uppercase tracking-wider text-muted-foreground">
+                  <span className="text-[13px] font-medium uppercase tracking-wider text-muted-foreground group-hover:text-brand transition-colors duration-300">
                     {dict.footer.phone}
                   </span>
-                  <p className="text-[15px] text-foreground/80 mt-0.5">
+                  <p className="text-[15px] text-foreground/80 mt-0.5 group-hover:text-brand transition-colors duration-300">
                     +977 9811420975
                   </p>
                 </div>
-                <svg className="w-4 h-4 text-muted-foreground/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-muted-foreground/40 group-hover:text-brand group-hover:translate-x-0.5 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                 </svg>
               </a>
               <div className="ios-separator" />
               <a
                 href="mailto:arunneupane0000@gmail.com"
-                className="flex items-center justify-between px-4 py-3.5 hover:bg-muted/50 transition-all duration-200 ios-press"
+                className="flex items-center justify-between px-4 py-3.5 rounded-xl hover:bg-muted/50 transition-all duration-300 ios-press group"
                 onClick={() => { hapticTap(); playTap(); }}
               >
                 <div>
-                  <span className="text-[13px] font-medium uppercase tracking-wider text-muted-foreground">
+                  <span className="text-[13px] font-medium uppercase tracking-wider text-muted-foreground group-hover:text-brand transition-colors duration-300">
                     {dict.footer.email}
                   </span>
-                  <p className="text-[15px] text-foreground/80 mt-0.5 break-all">
+                  <p className="text-[15px] text-foreground/80 mt-0.5 break-all group-hover:text-brand transition-colors duration-300">
                     arunneupane0000@gmail.com
                   </p>
                 </div>
-                <svg className="w-4 h-4 text-muted-foreground/40 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-muted-foreground/40 shrink-0 group-hover:text-brand group-hover:translate-x-0.5 transition-all duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
                 </svg>
               </a>

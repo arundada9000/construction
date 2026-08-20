@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import AnimatedSection from '@/components/AnimatedSection';
+import TextReveal from '@/components/TextReveal';
 import Link from 'next/link';
 import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
@@ -264,12 +265,11 @@ export default async function ServicesPage({ params }: Props) {
       <section>
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
           <AnimatedSection className="mb-16 text-center">
-            <h2
+            <TextReveal
+              text={dict.servicesPage.process.title}
+              as="h2"
               className="text-3xl font-bold tracking-tight sm:text-4xl"
-              style={{ color: 'var(--foreground)' }}
-            >
-              {dict.servicesPage.process.title}
-            </h2>
+            />
           </AnimatedSection>
 
           <div className="relative">
@@ -282,10 +282,10 @@ export default async function ServicesPage({ params }: Props) {
             <div className="grid gap-10 lg:grid-cols-4 lg:gap-8">
               {dict.servicesPage.process.steps.map((step, i) => (
                 <AnimatedSection key={step.title} delay={i * 120} direction="up">
-                  <div className="relative flex flex-col items-center text-center">
+                  <div className="relative flex flex-col items-center text-center group cursor-default">
                     {/* Step circle */}
                     <div
-                      className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full text-lg font-bold text-white"
+                      className="relative z-10 mb-6 flex h-16 w-16 items-center justify-center rounded-full text-lg font-bold text-white transition-all duration-300 group-hover:scale-110 group-hover:shadow-lg"
                       style={{ backgroundColor: 'var(--brand)' }}
                     >
                       {i + 1}
@@ -300,7 +300,7 @@ export default async function ServicesPage({ params }: Props) {
                     )}
 
                     <h3
-                      className="text-lg font-bold"
+                      className="text-lg font-bold transition-colors duration-300 group-hover:text-brand"
                       style={{ color: 'var(--foreground)' }}
                     >
                       {step.title}
