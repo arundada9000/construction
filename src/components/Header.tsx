@@ -143,10 +143,10 @@ export default function Header({ dict, lang }: HeaderProps) {
           {/* Logo */}
           <Link
             href={buildHref('/')}
-            className="flex items-center gap-0.5 text-lg font-bold tracking-tight transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
+            className="flex items-center gap-0.5 text-lg font-bold tracking-tight transition-all duration-300 hover:scale-[1.04] active:scale-[0.96]"
           >
             <span className="text-foreground">Sajilo</span>
-            <span className="text-brand">.</span>
+            <span className="text-brand transition-transform duration-300 group-hover:rotate-12">.</span>
             <span className="font-semibold text-foreground">Builder</span>
           </Link>
 
@@ -158,7 +158,7 @@ export default function Header({ dict, lang }: HeaderProps) {
                 <Link
                   key={key}
                   href={buildHref(path)}
-                  className="group relative ios-touch px-3 py-2 text-[13px] font-medium tracking-wide rounded-xl transition-all duration-200 ios-press"
+                  className="group relative ios-touch px-3 py-2 text-[13px] font-medium tracking-wide rounded-xl transition-all duration-300 ios-press hover:scale-[1.03]"
                   onClick={() => { hapticTap(); playNav(); }}
                   style={{
                     color: active ? 'var(--brand)' : 'var(--foreground)',
@@ -180,13 +180,13 @@ export default function Header({ dict, lang }: HeaderProps) {
                   {dict.nav[key]}
                   {active && (
                     <span
-                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2.5px] w-5 rounded-full"
+                      className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[2.5px] w-5 rounded-full transition-all duration-300"
                       style={{ backgroundColor: 'var(--brand)' }}
                     />
                   )}
                   {!active && (
                     <span
-                      className="absolute bottom-0 left-1/2 h-[2px] w-0 rounded-full transition-all duration-200 group-hover:w-5 group-hover:-translate-x-1/2"
+                      className="absolute bottom-0 left-1/2 h-[2px] w-0 rounded-full transition-all duration-300 group-hover:w-5 group-hover:-translate-x-1/2"
                       style={{ backgroundColor: 'var(--brand)' }}
                     />
                   )}
@@ -258,7 +258,7 @@ export default function Header({ dict, lang }: HeaderProps) {
               )}
             </button>
 
-            <Link href={buildHref('/contact')} className="btn-primary">
+            <Link href={buildHref('/contact')} className="btn-primary hover:scale-[1.03] active:scale-[0.97] transition-transform duration-200">
               {dict.hero.ctaPrimary}
             </Link>
           </div>
@@ -347,24 +347,25 @@ export default function Header({ dict, lang }: HeaderProps) {
                 <Link
                   key={key}
                   href={buildHref(path)}
-                  className="flex flex-col items-center gap-0.5 rounded-xl px-3 py-1.5 transition-all duration-200 ios-press ios-touch"
+                  className="flex flex-col items-center gap-0.5 rounded-xl px-3 py-1.5 transition-all duration-300 ios-press ios-touch hover:bg-muted/50"
                   onClick={() => { hapticTap(); playNav(); }}
                   style={{
                     color: active ? 'var(--brand)' : 'var(--muted-foreground)',
+                    backgroundColor: active ? 'var(--brand-light)' : 'transparent',
                   }}
                 >
                   <span
-                    className="transition-transform duration-200"
-                    style={{ transform: active ? 'scale(1.15)' : 'scale(1)' }}
+                    className="transition-all duration-300"
+                    style={{ transform: active ? 'scale(1.2) translateY(-1px)' : 'scale(1) translateY(0)' }}
                   >
                     {icon}
                   </span>
-                  <span className="text-[10px] font-medium leading-none">
+                  <span className="text-[10px] font-medium leading-none transition-colors duration-300">
                     {dict.nav[key]}
                   </span>
                   {active && (
                     <span
-                      className="mt-0.5 h-[2px] w-4 rounded-full"
+                      className="mt-0.5 h-[2px] w-5 rounded-full transition-all duration-300"
                       style={{ backgroundColor: 'var(--brand)' }}
                     />
                   )}

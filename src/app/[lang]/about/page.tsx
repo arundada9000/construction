@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const title = lang === 'ne' ? 'हाम्रो बारेमा' : 'About Us';
   const desc = lang === 'ne'
-    ? 'सजिलो डिजिटल प्रा. लि. — गुणस्तर, नवप्रवर्तन, र जवाफदेहितामा केन्द्रित डिजिटल समाधान।'
-    : 'Sajilo Builder by Sajilo Digital Pvt. Ltd. — Construction and digital solutions focused on quality, innovation, and accountability.';
+    ? 'सजिलो डिजिटल प्रा. लि. - गुणस्तर, नवप्रवर्तन, र जवाफदेहितामा केन्द्रित डिजिटल समाधान।'
+    : 'Sajilo Builder by Sajilo Digital Pvt. Ltd. - Construction and digital solutions focused on quality, innovation, and accountability.';
   return {
     title,
     description: desc,

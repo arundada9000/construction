@@ -80,7 +80,7 @@ export async function generateMetadata({
           url: '/assets/images/home/hero.webp',
           width: 1920,
           height: 1080,
-          alt: 'Sajilo Builder — Construction & Digital Solutions',
+          alt: 'Sajilo Builder - Construction & Digital Solutions',
         },
       ],
     },

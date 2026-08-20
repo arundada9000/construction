@@ -88,7 +88,7 @@ export default function ProjectGrid({ projects, lang, completedLabel, ongoingLab
           ))}
         </div>
 
-        {/* Location filters — scrollable on mobile, centered on desktop */}
+        {/* Location filters - scrollable on mobile, centered on desktop */}
         <div className="mt-3 -mx-4 sm:mx-0 overflow-x-auto px-4 sm:px-0 scrollbar-none">
           <div className="flex items-center justify-start sm:justify-center gap-2 pb-1">
             <button

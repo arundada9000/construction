@@ -10,8 +10,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const title = lang === 'ne' ? 'सम्पर्क' : 'Contact Us';
   const desc = lang === 'ne'
-    ? 'सजिलो डिजिटल प्रा. लि. सँग सम्पर्क गर्नुहोस् — बुटवल, लुम्बिनी, नेपाल।'
-    : 'Contact Sajilo Builder by Sajilo Digital Pvt. Ltd. — Butwal, Lumbini, Nepal.';
+    ? 'सजिलो डिजिटल प्रा. लि. सँग सम्पर्क गर्नुहोस् - बुटवल, लुम्बिनी, नेपाल।'
+    : 'Contact Sajilo Builder by Sajilo Digital Pvt. Ltd. - Butwal, Lumbini, Nepal.';
   return {
     title,
     description: desc,

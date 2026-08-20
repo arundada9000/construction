@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const { lang } = await params;
   const title = lang === 'ne' ? 'हाम्रा परियोजनाहरू' : 'Our Projects';
   const desc = lang === 'ne'
-    ? 'हाम्रा सम्पन्न र भइरहेका निर्माण परियोजनाहरू — अस्पताल, सडक, पुल, जलविद्युत।'
-    : 'Our completed and ongoing construction projects — hospitals, roads, bridges, hydropower.';
+    ? 'हाम्रा सम्पन्न र भइरहेका निर्माण परियोजनाहरू - अस्पताल, सडक, पुल, जलविद्युत।'
+    : 'Our completed and ongoing construction projects - hospitals, roads, bridges, hydropower.';
   return {
     title,
     description: desc,

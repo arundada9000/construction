@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'),
   title: {
-    default: 'Sajilo Builder — Construction & Digital Solutions by Sajilo Digital Pvt. Ltd.',
+    default: 'Sajilo Builder - Construction & Digital Solutions by Sajilo Digital Pvt. Ltd.',
     template: '%s | Sajilo Builder',
   },
   description:
-    'Sajilo Builder by Sajilo Digital Pvt. Ltd. — Construction, civil works, web development, and project management in Butwal, Lumbini, Nepal.',
+    'Sajilo Builder by Sajilo Digital Pvt. Ltd. - Construction, civil works, web development, and project management in Butwal, Lumbini, Nepal.',
   keywords: [
     'digital solutions Nepal',
     'web development Nepal',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     siteName: 'Sajilo Builder',
-    title: 'Sajilo Builder — Construction & Digital Solutions',
+    title: 'Sajilo Builder - Construction & Digital Solutions',
     description:
       'Digital solutions, web development, and project management focused on quality, innovation, and accountable delivery.',
     images: [
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
         url: '/assets/images/home/hero.webp',
         width: 1920,
         height: 1080,
-        alt: 'Sajilo Builder — Construction & Digital Solutions',
+        alt: 'Sajilo Builder - Construction & Digital Solutions',
       },
     ],
   },
