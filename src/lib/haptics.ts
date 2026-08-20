@@ -97,6 +97,21 @@ export function playClink() {
   });
 }
 
+export function playRumble() {
+  const ctx = getAudioCtx();
+  if (!ctx) return;
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.frequency.value = 80;
+  osc.type = 'sine';
+  gain.gain.value = 0.04;
+  osc.start(ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+  osc.stop(ctx.currentTime + 0.15);
+}
+
 export function handlePress(feedback: 'tap' | 'nav' | 'success' = 'tap') {
   hapticTap();
   if (feedback === 'tap') playTap();

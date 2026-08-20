@@ -4,6 +4,8 @@ import ThemeProvider from '@/components/ThemeProvider';
 import ScrollToTop from '@/components/ScrollToTop';
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 import CraneTransition from '@/components/CraneTransition';
+import SafetyTapeWipe from '@/components/SafetyTapeWipe';
+import ConcretePour from '@/components/ConcretePour';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import {
@@ -115,7 +117,7 @@ export default async function LangLayout({
       <WebsiteJsonLd />
       <Header dict={dict} lang={locale} />
       <main id="content" className="flex-1 pb-20 md:pb-0">
-        <CraneTransition>{children}</CraneTransition>
+        <SafetyTapeWipe>{children}</SafetyTapeWipe>
       </main>
       <Footer dict={dict} lang={locale} />
     </ThemeProvider>
