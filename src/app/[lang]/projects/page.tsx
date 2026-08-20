@@ -1,9 +1,25 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import AnimatedSection from '@/components/AnimatedSection';
 import ProjectGrid from '@/components/ProjectGrid';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 type Props = { params: Promise<{ lang: string }> };
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const title = lang === 'ne' ? 'हाम्रा परियोजनाहरू' : 'Our Projects';
+  const desc = lang === 'ne'
+    ? 'हाम्रा सम्पन्न र भइरहेका निर्माण परियोजनाहरू — अस्पताल, सडक, पुल, जलविद्युत।'
+    : 'Our completed and ongoing construction projects — hospitals, roads, bridges, hydropower.';
+  return {
+    title,
+    description: desc,
+    alternates: { canonical: `https://sajilodigital.com.np/${lang}/projects` },
+    openGraph: { title, description: desc, url: `https://sajilodigital.com.np/${lang}/projects` },
+  };
+}
 
 const projects = [
   {
@@ -69,6 +85,7 @@ export default async function ProjectsPage({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: `/${lang}` }, { name: 'Projects', url: `/${lang}/projects` }]} />
       {/* Hero */}
       <section className="relative min-h-[90vh] overflow-hidden">
         <img

@@ -3,6 +3,13 @@ import { getDictionary, locales, type Locale } from '@/i18n/dictionaries';
 import ThemeProvider from '@/components/ThemeProvider';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import {
+  OrganizationJsonLd,
+  LocalBusinessJsonLd,
+  WebsiteJsonLd,
+} from '@/components/JsonLd';
+
+const BASE_URL = 'https://sajilodigital.com.np';
 
 export async function generateStaticParams() {
   return locales.map((lang) => ({ lang }));
@@ -15,9 +22,73 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { lang } = await params;
   const dict = getDictionary(lang as Locale);
+
   return {
-    title: dict.meta.title,
+    metadataBase: new URL(BASE_URL),
+    title: {
+      default: dict.meta.title,
+      template: `%s | Sajilo Digital Pvt. Ltd.`,
+    },
     description: dict.meta.description,
+    keywords: [
+      'digital solutions',
+      'web development',
+      'project management',
+      'Nepal',
+      'Sajilo Digital',
+      'IT company Nepal',
+      'Next.js development',
+      'React development',
+      'Butwal',
+      'Lumbini',
+    ],
+    authors: [{ name: 'Arun Neupane', url: 'https://arunneupane.vercel.app' }],
+    creator: 'Arun Neupane',
+    publisher: 'Sajilo Digital Pvt. Ltd.',
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+    alternates: {
+      canonical: `${BASE_URL}/${lang}`,
+      languages: {
+        en: `${BASE_URL}/en`,
+        ne: `${BASE_URL}/ne`,
+      },
+    },
+    openGraph: {
+      type: 'website',
+      locale: lang === 'ne' ? 'ne_NP' : 'en_US',
+      url: `${BASE_URL}/${lang}`,
+      siteName: 'Sajilo Digital Pvt. Ltd.',
+      title: dict.meta.title,
+      description: dict.meta.description,
+      images: [
+        {
+          url: '/assets/images/home/hero.webp',
+          width: 1920,
+          height: 1080,
+          alt: 'Sajilo Digital Pvt. Ltd.',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: dict.meta.title,
+      description: dict.meta.description,
+      images: ['/assets/images/home/hero.webp'],
+      creator: '@arundada9000',
+    },
+    verification: {
+      google: 'your-google-verification-code',
+    },
   };
 }
 
@@ -34,6 +105,9 @@ export default async function LangLayout({
 
   return (
     <ThemeProvider>
+      <OrganizationJsonLd />
+      <LocalBusinessJsonLd />
+      <WebsiteJsonLd />
       <Header dict={dict} lang={locale} />
       <main id="content" className="flex-1 pb-20 md:pb-0">
         {children}

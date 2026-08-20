@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import { posts } from '@/lib/blog-posts';
 import AnimatedSection from '@/components/AnimatedSection';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 type Props = {
   params: Promise<{ lang: string }>;
@@ -18,7 +19,13 @@ export async function generateMetadata({
   const dict = getDictionary(locale);
   return {
     title: dict.insights.title,
-    description: dict.insights.title,
+    description: dict.insights.subtitle,
+    alternates: { canonical: `https://sajilodigital.com.np/${lang}/blog` },
+    openGraph: {
+      title: dict.insights.title,
+      description: dict.insights.subtitle,
+      url: `https://sajilodigital.com.np/${lang}/blog`,
+    },
   };
 }
 
@@ -29,6 +36,7 @@ export default async function BlogIndexPage({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: `/${lang}` }, { name: 'Blog', url: `/${lang}/blog` }]} />
       {/* Hero */}
       <section className="relative min-h-[90vh] overflow-hidden">
         <img

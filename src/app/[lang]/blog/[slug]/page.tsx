@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import { posts, getPostBySlug } from '@/lib/blog-posts';
 import AnimatedSection from '@/components/AnimatedSection';
+import { ArticleJsonLd } from '@/components/JsonLd';
 
 type Props = {
   params: Promise<{ lang: string; slug: string }>;
@@ -40,10 +41,11 @@ export default async function BlogPostPage({ params }: Props) {
   const date = lang === 'ne' ? post.dateNe : post.dateEn;
   const author = lang === 'ne' ? post.authorNe : post.authorEn;
   const content = lang === 'ne' ? post.contentNe : post.contentEn;
-  const shareUrl = `https://suryaconstructioncompany.com/${lang}/blog/${post.slug}`;
+  const shareUrl = `https://sajilodigital.com.np/${lang}/blog/${post.slug}`;
 
   return (
     <>
+      <ArticleJsonLd title={lang === 'ne' ? post.titleNe : post.titleEn} description={lang === 'ne' ? post.excerptNe : post.excerptEn} image={post.image} datePublished={lang === 'ne' ? post.dateNe : post.dateEn} author={lang === 'ne' ? post.authorNe : post.authorEn} slug={post.slug} />
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[360px] overflow-hidden">
         <img

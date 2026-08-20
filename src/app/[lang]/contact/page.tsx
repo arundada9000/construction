@@ -1,8 +1,24 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import AnimatedSection from '@/components/AnimatedSection';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 type Props = { params: Promise<{ lang: string }> };
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const title = lang === 'ne' ? 'सम्पर्क' : 'Contact Us';
+  const desc = lang === 'ne'
+    ? 'सजिलो डिजिटल प्रा. लि. सँग सम्पर्क गर्नुहोस् — बुटवल, लुम्बिनी, नेपाल।'
+    : 'Contact Sajilo Digital Pvt. Ltd. — Butwal, Lumbini, Nepal.';
+  return {
+    title,
+    description: desc,
+    alternates: { canonical: `https://sajilodigital.com.np/${lang}/contact` },
+    openGraph: { title, description: desc, url: `https://sajilodigital.com.np/${lang}/contact` },
+  };
+}
 
 export default async function ContactPage({ params }: Props) {
   const { lang: rawLang } = await params;
@@ -12,11 +28,12 @@ export default async function ContactPage({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: `/${lang}` }, { name: 'Contact', url: `/${lang}/contact` }]} />
       {/* ── Hero ── */}
       <section className="relative min-h-[90vh] overflow-hidden">
         <img
           src="/assets/images/home/hero.webp"
-          alt="Contact Surya Construction"
+          alt="Contact Sajilo Digital"
           className="absolute inset-0 h-full w-full object-cover animate-hero-zoom"
         />
         <div className="hero-overlay absolute inset-0 z-10" />
@@ -44,7 +61,7 @@ export default async function ContactPage({ params }: Props) {
           <AnimatedSection delay={450} direction="up">
             <div className="mt-10 flex flex-col items-center gap-4 sm:flex-row">
               <a
-                href="https://wa.me/9779856014022?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20construction%20project."
+                href="https://wa.me/9779811420975?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20construction%20project."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-8 py-3.5 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:bg-[#1ebe57] hover:scale-105 active:scale-95"
@@ -55,7 +72,7 @@ export default async function ContactPage({ params }: Props) {
                 WhatsApp
               </a>
               <a
-                href="mailto:surya_cco@yahoo.com?subject=Project%20Inquiry"
+                href="mailto:arunneupane0000@gmail.com?subject=Project%20Inquiry"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/10 px-8 py-3.5 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-300 hover:bg-white/20 hover:border-white/50 hover:scale-105 active:scale-95"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5">
@@ -85,9 +102,9 @@ export default async function ContactPage({ params }: Props) {
                 </div>
                 <h3 className="text-lg font-semibold">{cp.offices.registered}</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">
-                  Surya Construction Company Pvt. Ltd.
+                  Sajilo Digital Pvt. Ltd.
                   <br />
-                  Kathmandu, Nepal
+                  Butwal, Lumbini, Nepal
                 </p>
               </div>
             </AnimatedSection>
@@ -102,7 +119,7 @@ export default async function ContactPage({ params }: Props) {
                 </div>
                 <h3 className="text-lg font-semibold">{cp.offices.city}</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">
-                  Kathmandu, Nepal
+                  Butwal, Lumbini, Nepal
                 </p>
               </div>
             </AnimatedSection>
@@ -122,13 +139,13 @@ export default async function ContactPage({ params }: Props) {
                     </a>
                   </p>
                   <p>
-                    <a href="tel:+9779856014022" className="hover:text-brand transition-colors">
-                      +977-9856014022
+                    <a href="tel:+9779811420975" className="hover:text-brand transition-colors">
+                      +977-9811420975
                     </a>
                   </p>
                   <p>
-                    <a href="mailto:surya_cco@yahoo.com" className="hover:text-brand transition-colors">
-                      surya_cco@yahoo.com
+                    <a href="mailto:arunneupane0000@gmail.com" className="hover:text-brand transition-colors">
+                      arunneupane0000@gmail.com
                     </a>
                   </p>
                 </div>
@@ -160,9 +177,9 @@ export default async function ContactPage({ params }: Props) {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold">{cp.quickContact.whatsapp}</h3>
-                <p className="mt-2 text-muted-foreground">+977 9856014022</p>
+                <p className="mt-2 text-muted-foreground">+977 9811420975</p>
                 <a
-                  href="https://wa.me/9779856014022?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20construction%20project."
+                  href="https://wa.me/9779811420975?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20a%20construction%20project."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-6 inline-flex items-center gap-2 rounded-xl bg-[#25D366] px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-[#1ebe57]"
@@ -181,9 +198,9 @@ export default async function ContactPage({ params }: Props) {
                   </svg>
                 </div>
                 <h3 className="text-xl font-semibold">{cp.quickContact.email}</h3>
-                <p className="mt-2 text-muted-foreground">surya_cco@yahoo.com</p>
+                <p className="mt-2 text-muted-foreground">arunneupane0000@gmail.com</p>
                 <a
-                  href="mailto:surya_cco@yahoo.com?subject=Project%20Inquiry"
+                  href="mailto:arunneupane0000@gmail.com?subject=Project%20Inquiry"
                   className="mt-6 inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-brand-light"
                 >
                   Email Us

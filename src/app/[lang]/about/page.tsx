@@ -1,8 +1,24 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import AnimatedSection from '@/components/AnimatedSection';
+import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 type Props = { params: Promise<{ lang: string }> };
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const title = lang === 'ne' ? 'हाम्रो बारेमा' : 'About Us';
+  const desc = lang === 'ne'
+    ? 'सजिलो डिजिटल प्रा. लि. — गुणस्तर, नवप्रवर्तन, र जवाफदेहितामा केन्द्रित डिजिटल समाधान।'
+    : 'Sajilo Digital Pvt. Ltd. — Digital solutions focused on quality, innovation, and accountability.';
+  return {
+    title,
+    description: desc,
+    alternates: { canonical: `https://sajilodigital.com.np/${lang}/about` },
+    openGraph: { title, description: desc, url: `https://sajilodigital.com.np/${lang}/about` },
+  };
+}
 
 const ICONS = {
   building: (
@@ -56,6 +72,7 @@ export default async function AboutPage({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: `/${lang}` }, { name: 'About', url: `/${lang}/about` }]} />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
