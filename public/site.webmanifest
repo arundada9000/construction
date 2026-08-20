@@ -1,16 +1,61 @@
 {
   "name": "Sajilo Digital Pvt. Ltd.",
   "short_name": "Sajilo Digital",
-  "description": "Digital solutions, web development, and project management",
+  "description": "Digital solutions, web development, and project management by Sajilo Digital Pvt. Ltd., Butwal, Nepal.",
   "start_url": "/en",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#ffffff",
   "theme_color": "#f97316",
+  "categories": ["business", "technology", "developer tools"],
+  "lang": "en",
+  "dir": "ltr",
+  "id": "/",
+  "shortcuts": [
+    {
+      "name": "Home",
+      "short_name": "Home",
+      "url": "/en",
+      "description": "Go to the homepage"
+    },
+    {
+      "name": "Services",
+      "short_name": "Services",
+      "url": "/en/services",
+      "description": "View our services"
+    },
+    {
+      "name": "Projects",
+      "short_name": "Projects",
+      "url": "/en/projects",
+      "description": "View our projects"
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "url": "/en/contact",
+      "description": "Get in touch with us"
+    },
+    {
+      "name": "Blog",
+      "short_name": "Blog",
+      "url": "/en/blog",
+      "description": "Read our latest articles"
+    }
+  ],
   "icons": [
     {
       "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
     }
   ]
 }
