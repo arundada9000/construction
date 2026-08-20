@@ -28,6 +28,9 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: 'history.scrollRestoration = "manual";' }} />
+      </head>
       <body className="min-h-screen font-sans antialiased flex flex-col">{children}</body>
     </html>
   );

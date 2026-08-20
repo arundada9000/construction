@@ -7,7 +7,6 @@ export default function ScrollToTop() {
   const pathname = usePathname();
 
   useEffect(() => {
-    history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
   }, [pathname]);
 
