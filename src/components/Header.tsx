@@ -144,7 +144,7 @@ export default function Header({ dict, lang }: HeaderProps) {
           >
             <span className="text-foreground">Sajilo</span>
             <span className="text-brand">.</span>
-            <span className="font-semibold text-foreground">Digital</span>
+            <span className="font-semibold text-foreground">Builder</span>
           </Link>
 
           {/* Desktop nav */}

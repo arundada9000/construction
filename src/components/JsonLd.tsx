@@ -19,7 +19,7 @@ export function OrganizationJsonLd() {
       data={{
         '@context': 'https://schema.org',
         '@type': 'Organization',
-        name: 'Sajilo Digital Pvt. Ltd.',
+        name: 'Sajilo Builder',
         url: BASE_URL,
         logo: `${BASE_URL}/assets/images/home/logo.webp`,
         description:
@@ -55,7 +55,7 @@ export function LocalBusinessJsonLd() {
       data={{
         '@context': 'https://schema.org',
         '@type': 'LocalBusiness',
-        name: 'Sajilo Digital Pvt. Ltd.',
+        name: 'Sajilo Builder',
         image: `${BASE_URL}/assets/images/home/hero.webp`,
         url: BASE_URL,
         telephone: '+977-9811420975',
@@ -89,7 +89,7 @@ export function WebsiteJsonLd() {
       data={{
         '@context': 'https://schema.org',
         '@type': 'WebSite',
-        name: 'Sajilo Digital Pvt. Ltd.',
+        name: 'Sajilo Builder',
         url: BASE_URL,
         potentialAction: {
           '@type': 'SearchAction',
@@ -155,7 +155,7 @@ export function ArticleJsonLd({
         },
         publisher: {
           '@type': 'Organization',
-          name: 'Sajilo Digital Pvt. Ltd.',
+          name: 'Sajilo Builder',
           logo: {
             '@type': 'ImageObject',
             url: `${BASE_URL}/assets/images/home/logo.webp`,

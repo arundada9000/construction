@@ -15,18 +15,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'),
   title: {
-    default: 'Sajilo Digital Pvt. Ltd. — Digital Solutions & Project Management',
-    template: '%s | Sajilo Digital Pvt. Ltd.',
+    default: 'Sajilo Builder — Construction & Digital Solutions by Sajilo Digital Pvt. Ltd.',
+    template: '%s | Sajilo Builder',
   },
   description:
-    'Sajilo Digital Pvt. Ltd. delivers digital solutions, web development, and project management with a focus on quality, innovation, and accountable delivery. Based in Butwal, Lumbini, Nepal.',
+    'Sajilo Builder by Sajilo Digital Pvt. Ltd. — Construction, civil works, web development, and project management in Butwal, Lumbini, Nepal.',
   keywords: [
     'digital solutions Nepal',
     'web development Nepal',
     'Next.js development',
     'React development',
     'project management Nepal',
-    'Sajilo Digital',
+    'Sajilo Builder',
     'IT company Nepal',
     'Butwal IT company',
     'Lumbini digital agency',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Arun Neupane', url: 'https://arunneupane.vercel.app' }],
   creator: 'Arun Neupane',
-  publisher: 'Sajilo Digital Pvt. Ltd.',
+  publisher: 'Sajilo Builder',
   formatDetection: {
     email: false,
     address: false,
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: '/',
-    siteName: 'Sajilo Digital Pvt. Ltd.',
-    title: 'Sajilo Digital Pvt. Ltd. — Digital Solutions & Project Management',
+    siteName: 'Sajilo Builder',
+    title: 'Sajilo Builder — Construction & Digital Solutions',
     description:
       'Digital solutions, web development, and project management focused on quality, innovation, and accountable delivery.',
     images: [
@@ -56,13 +56,13 @@ export const metadata: Metadata = {
         url: '/assets/images/home/hero.webp',
         width: 1920,
         height: 1080,
-        alt: 'Sajilo Digital Pvt. Ltd.',
+        alt: 'Sajilo Builder — Construction & Digital Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sajilo Digital Pvt. Ltd.',
+    title: 'Sajilo Builder',
     description:
       'Digital solutions, web development, and project management focused on quality, innovation, and accountable delivery.',
     images: ['/assets/images/home/hero.webp'],

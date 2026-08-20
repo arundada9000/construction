@@ -29,7 +29,7 @@ export async function generateMetadata({
     metadataBase: new URL(BASE_URL),
     title: {
       default: dict.meta.title,
-      template: `%s | Sajilo Digital Pvt. Ltd.`,
+      template: `%s | Sajilo Builder`,
     },
     description: dict.meta.description,
     keywords: [
@@ -37,7 +37,7 @@ export async function generateMetadata({
       'web development',
       'project management',
       'Nepal',
-      'Sajilo Digital',
+      'Sajilo Builder',
       'IT company Nepal',
       'Next.js development',
       'React development',
@@ -46,7 +46,7 @@ export async function generateMetadata({
     ],
     authors: [{ name: 'Arun Neupane', url: 'https://arunneupane.vercel.app' }],
     creator: 'Arun Neupane',
-    publisher: 'Sajilo Digital Pvt. Ltd.',
+    publisher: 'Sajilo Builder',
     robots: {
       index: true,
       follow: true,
@@ -69,7 +69,7 @@ export async function generateMetadata({
       type: 'website',
       locale: lang === 'ne' ? 'ne_NP' : 'en_US',
       url: `${BASE_URL}/${lang}`,
-      siteName: 'Sajilo Digital Pvt. Ltd.',
+      siteName: 'Sajilo Builder',
       title: dict.meta.title,
       description: dict.meta.description,
       images: [
@@ -77,7 +77,7 @@ export async function generateMetadata({
           url: '/assets/images/home/hero.webp',
           width: 1920,
           height: 1080,
-          alt: 'Sajilo Digital Pvt. Ltd.',
+          alt: 'Sajilo Builder — Construction & Digital Solutions',
         },
       ],
     },

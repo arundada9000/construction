@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ lang: str
   const title = lang === 'ne' ? 'सम्पर्क' : 'Contact Us';
   const desc = lang === 'ne'
     ? 'सजिलो डिजिटल प्रा. लि. सँग सम्पर्क गर्नुहोस् — बुटवल, लुम्बिनी, नेपाल।'
-    : 'Contact Sajilo Digital Pvt. Ltd. — Butwal, Lumbini, Nepal.';
+    : 'Contact Sajilo Builder by Sajilo Digital Pvt. Ltd. — Butwal, Lumbini, Nepal.';
   return {
     title,
     description: desc,
@@ -33,7 +33,7 @@ export default async function ContactPage({ params }: Props) {
       <section className="relative min-h-[90vh] overflow-hidden">
         <img
           src="/assets/images/home/hero.webp"
-          alt="Contact Sajilo Digital"
+          alt="Contact Sajilo Builder"
           className="absolute inset-0 h-full w-full object-cover animate-hero-zoom"
         />
         <div className="hero-overlay absolute inset-0 z-10" />
@@ -102,7 +102,8 @@ export default async function ContactPage({ params }: Props) {
                 </div>
                 <h3 className="text-lg font-semibold">{cp.offices.registered}</h3>
                 <p className="mt-3 text-muted-foreground leading-relaxed">
-                  Sajilo Digital Pvt. Ltd.
+                  Sajilo Builder<br />
+                  <span className="text-sm text-muted-foreground">by Sajilo Digital Pvt. Ltd.</span>
                   <br />
                   Butwal, Lumbini, Nepal
                 </p>

@@ -27,11 +27,11 @@ export default function Footer({ dict, lang }: FooterProps) {
           <div className="flex flex-col gap-6">
             <Link href={`/${lang}/`} className="inline-flex items-center gap-2 group w-fit">
               <div className="h-9 w-9 rounded-lg bg-brand flex items-center justify-center text-white font-bold text-sm tracking-tight shrink-0 transition-transform duration-300 group-hover:scale-105">
-                S D
+                S B
               </div>
               <span className="text-lg font-bold text-foreground tracking-tight">
                 Sajilo{' '}
-                <span className="text-brand">Digital</span>
+                <span className="text-brand">Builder</span>
               </span>
             </Link>
 

@@ -1,8 +1,10 @@
 <div align="center">
 
-# Sajilo Digital Pvt. Ltd.
+# Sajilo Builder
 
-**A modern, bilingual (EN/NP) corporate website built with Next.js 16, React 19, and Tailwind CSS v4.**
+**A modern, bilingual (EN/NP) construction company website built with Next.js 16, React 19, and Tailwind CSS v4.**
+
+A product of [Sajilo Digital Pvt. Ltd.](https://sajilodigital.com.np)
 
 Live Demo: [arun-builder.vercel.app](https://arun-builder.vercel.app)
 
@@ -194,7 +196,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Author
 
-**Arun Neupane** — CTO & Lead Architect at Sajilo Digital Pvt. Ltd.
+**Arun Neupane** — CTO & Lead Architect at Sajilo Digital Pvt. Ltd. (parent company of Sajilo Builder)
 
 - Website: [sajilodigital.com.np](https://sajilodigital.com.np)
 - GitHub: [@arundada9000](https://github.com/arundada9000)
