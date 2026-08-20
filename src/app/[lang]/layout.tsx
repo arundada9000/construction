@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { getDictionary, locales, type Locale } from '@/i18n/dictionaries';
 import ThemeProvider from '@/components/ThemeProvider';
+import ScrollToTop from '@/components/ScrollToTop';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import {
@@ -105,6 +106,7 @@ export default async function LangLayout({
 
   return (
     <ThemeProvider>
+      <ScrollToTop />
       <OrganizationJsonLd />
       <LocalBusinessJsonLd />
       <WebsiteJsonLd />
