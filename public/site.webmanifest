@@ -1,0 +1,16 @@
+{
+  "name": "Sajilo Digital Pvt. Ltd.",
+  "short_name": "Sajilo Digital",
+  "description": "Digital solutions, web development, and project management",
+  "start_url": "/en",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
