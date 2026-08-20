@@ -33,7 +33,20 @@ function getAudioCtx(): AudioContext | null {
   return audioCtx;
 }
 
+function isSoundEnabled(): boolean {
+  if (typeof window === 'undefined') return true;
+  try {
+    const stored = localStorage.getItem('sajilo-settings');
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      return parsed.sound !== false;
+    }
+  } catch {}
+  return true;
+}
+
 export function playTap() {
+  if (!isSoundEnabled()) return;
   const ctx = getAudioCtx();
   if (!ctx) return;
   const osc = ctx.createOscillator();
@@ -48,6 +61,7 @@ export function playTap() {
 }
 
 export function playSuccess() {
+  if (!isSoundEnabled()) return;
   const ctx = getAudioCtx();
   if (!ctx) return;
   const notes = [659.25, 783.99];
@@ -66,6 +80,7 @@ export function playSuccess() {
 }
 
 export function playNav() {
+  if (!isSoundEnabled()) return;
   const ctx = getAudioCtx();
   if (!ctx) return;
   const osc = ctx.createOscillator();
@@ -81,6 +96,7 @@ export function playNav() {
 }
 
 export function playClink() {
+  if (!isSoundEnabled()) return;
   const ctx = getAudioCtx();
   if (!ctx) return;
   [2400, 3200].forEach((freq, i) => {
@@ -98,6 +114,7 @@ export function playClink() {
 }
 
 export function playRumble() {
+  if (!isSoundEnabled()) return;
   const ctx = getAudioCtx();
   if (!ctx) return;
   const osc = ctx.createOscillator();

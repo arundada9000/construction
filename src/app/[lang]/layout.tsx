@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { getDictionary, locales, type Locale } from '@/i18n/dictionaries';
 import ThemeProvider from '@/components/ThemeProvider';
+import SettingsProvider from '@/components/SettingsContext';
+import SettingsPanel from '@/components/SettingsPanel';
 import ScrollToTop from '@/components/ScrollToTop';
 import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
-import CraneTransition from '@/components/CraneTransition';
-import SafetyTapeWipe from '@/components/SafetyTapeWipe';
-import ConcretePour from '@/components/ConcretePour';
+import PageTransition from '@/components/PageTransition';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import {
@@ -110,16 +110,19 @@ export default async function LangLayout({
 
   return (
     <ThemeProvider>
-      <ScrollToTop />
-      <ServiceWorkerRegistration />
-      <OrganizationJsonLd />
-      <LocalBusinessJsonLd />
-      <WebsiteJsonLd />
-      <Header dict={dict} lang={locale} />
-      <main id="content" className="flex-1 pb-20 md:pb-0">
-        <SafetyTapeWipe>{children}</SafetyTapeWipe>
-      </main>
-      <Footer dict={dict} lang={locale} />
+      <SettingsProvider>
+        <ScrollToTop />
+        <ServiceWorkerRegistration />
+        <OrganizationJsonLd />
+        <LocalBusinessJsonLd />
+        <WebsiteJsonLd />
+        <Header dict={dict} lang={locale} />
+        <main id="content" className="flex-1 pb-20 md:pb-0">
+          <PageTransition>{children}</PageTransition>
+        </main>
+        <Footer dict={dict} lang={locale} />
+        <SettingsPanel />
+      </SettingsProvider>
     </ThemeProvider>
   );
 }

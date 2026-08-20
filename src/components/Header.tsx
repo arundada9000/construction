@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useTheme } from '@/components/ThemeProvider';
+import { useSettings } from '@/components/SettingsContext';
 import { hapticTap, playTap, playNav } from '@/lib/haptics';
 import { Dictionary, Locale } from '@/i18n/dictionaries';
 
@@ -103,6 +104,7 @@ export default function Header({ dict, lang }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
   const { theme, toggle } = useTheme();
+  const { openPanel } = useSettings();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -198,6 +200,17 @@ export default function Header({ dict, lang }: HeaderProps) {
             <LangSwitch lang={lang} currentPath={currentPath} />
 
             <button
+              onClick={() => { hapticTap(); playTap(); openPanel(); }}
+              className="relative flex ios-touch items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted ios-press"
+              aria-label="Settings"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground">
+                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </button>
+
+            <button
               onClick={() => { hapticTap(); playTap(); toggle(); }}
               className="relative flex ios-touch items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted ios-press"
               aria-label="Toggle theme"
@@ -253,6 +266,17 @@ export default function Header({ dict, lang }: HeaderProps) {
           {/* Mobile top bar controls */}
           <div className="flex items-center gap-2 md:hidden">
             <LangSwitch lang={lang} currentPath={currentPath} size="sm" />
+
+            <button
+              onClick={() => { hapticTap(); playTap(); openPanel(); }}
+              className="relative flex ios-touch items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted ios-press"
+              aria-label="Settings"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground">
+                <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                <circle cx="12" cy="12" r="3" />
+              </svg>
+            </button>
 
             <button
               onClick={() => { hapticTap(); playTap(); toggle(); }}
