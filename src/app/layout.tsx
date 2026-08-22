@@ -84,7 +84,7 @@ export const metadata: Metadata = {
     ],
     shortcut: '/favicon.svg',
     apple: [
-      { url: '/favicon.svg', sizes: '180x180', type: 'image/svg+xml' },
+      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -129,6 +129,13 @@ export default function RootLayout({
       suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable}`}
     >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var t=localStorage.getItem('sajilo-theme')||localStorage.getItem('theme')||'default';var d=localStorage.getItem('sajilo-dark');var p=window.matchMedia('(prefers-color-scheme: dark)').matches;var isD=d!==null?(d==='true'):(t==='dark'||t==='midnight'||t==='forest'||p);var c=localStorage.getItem('sajilo-custom-brand')||localStorage.getItem('custom-brand')||'#e85d04';var root=document.documentElement;if(t!=='default')root.classList.add(t);if(isD||t==='dark'||t==='midnight'||t==='forest')root.classList.add('dark');if(t==='custom'){root.style.setProperty('--custom-brand',c);root.style.setProperty('--custom-brand-hover',c);root.style.setProperty('--custom-brand-light',c+'20');root.style.setProperty('--custom-ring',c+'40');}}catch(e){}})();`,
+          }}
+        />
+      </head>
       <body className="min-h-screen font-sans antialiased flex flex-col">{children}</body>
     </html>
   );

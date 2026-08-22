@@ -215,8 +215,8 @@ export default async function EquipmentRentalPage({ params }: Props) {
             <AnimatedSection delay={200} direction="right">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden border border-[var(--border)]">
                 <img
-                  src="/assets/images/services/overview.webp"
-                  alt="Heavy equipment fleet"
+                  src="/assets/images/equipment/excavator.jpg"
+                  alt="Heavy equipment fleet excavator"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />

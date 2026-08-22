@@ -187,13 +187,8 @@ export default async function ContactPage({ params }: Props) {
                 <h3 className="text-lg font-semibold">{cp.details}</h3>
                 <div className="mt-3 space-y-2 text-muted-foreground">
                   <p>
-                    <a href="tel:+9771423456" className="hover:text-brand transition-colors">
-                      +977-1-423456
-                    </a>
-                  </p>
-                  <p>
                     <a href="tel:+9779811420975" className="hover:text-brand transition-colors">
-                      +977-9811420975
+                      +977 9811420975
                     </a>
                   </p>
                   <p>
@@ -209,7 +204,7 @@ export default async function ContactPage({ params }: Props) {
       </section>
 
       {/* ── Quick Contact ── */}
-      <section className="section-muted py-14 sm:py-16 md:py-20 lg:py-24">
+      <section id="quick-contact" className="section-muted py-14 sm:py-16 md:py-20 lg:py-24">
         <div className="mx-auto max-w-4xl px-6">
           <AnimatedSection delay={0} direction="up" className="text-center">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
@@ -277,21 +272,18 @@ export default async function ContactPage({ params }: Props) {
           </AnimatedSection>
 
           <AnimatedSection delay={150} direction="up">
-            <div className="relative mt-12 overflow-hidden rounded-xl bg-zinc-200 dark:bg-zinc-800 aspect-video flex flex-col items-center justify-center gap-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="h-12 w-12 text-zinc-400 dark:text-zinc-500"
-              >
-                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
-                <circle cx="12" cy="10" r="3" />
-              </svg>
-              <span className="text-sm text-zinc-400 dark:text-zinc-500">Map Location</span>
+            <div className="relative mt-12 overflow-hidden rounded-2xl border border-border aspect-video shadow-md">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d113063.02324278069!2d83.39659353982855!3d27.697486849491754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3996864275d9755f%3A0x2b1e92d80144c21f!2sButwal%2C%20Nepal!5e0!3m2!1sen!2snp!4v1700000000000!5m2!1sen!2snp"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Sajilo Builder Office Location Butwal Nepal"
+                className="w-full h-full"
+              />
             </div>
           </AnimatedSection>
         </div>
@@ -308,7 +300,9 @@ export default async function ContactPage({ params }: Props) {
               {cp.ctaSubtitle}
             </p>
             <a
-              href="#contact"
+              href="https://wa.me/9779811420975?text=Hello%2C%20I%20would%20like%20to%20discuss%20a%20construction%20project."
+              target="_blank"
+              rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2 rounded-xl bg-brand px-8 py-4 text-base font-semibold text-white transition-colors hover:bg-brand-light"
             >
               {dict.ctaBanner.cta}
