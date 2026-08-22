@@ -2,7 +2,7 @@
 
 # Sajilo Builder
 
-**A modern, bilingual (EN/NP) construction company website built with Next.js 16, React 19, and Tailwind CSS v4.**
+**A modern, high-performance, bilingual (EN/NP) construction company website and machinery rental platform built with Next.js 16, React 19, Tailwind CSS v4, and an iOS HIG design system.**
 
 A product of [Sajilo Digital Pvt. Ltd.](https://sajilodigital.com.np)
 
@@ -12,43 +12,50 @@ Live Demo: [arun-builder.vercel.app](https://arun-builder.vercel.app)
 [![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?logo=tailwindcss)](https://tailwindcss.com)
+[![PWA Ready](https://img.shields.io/badge/PWA-Ready-purple)](https://web.dev/progressive-web-apps/)
 [![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
 </div>
 
 ---
 
-## Features
+## ✨ Features
 
-- **Bilingual** — Full English and Nepali (EN/NP) translations with one-click language switch
-- **Dark/Light Theme** — Automatic detection + manual toggle, persisted in localStorage
-- **SEO Optimized** — Dynamic sitemap, robots.txt, JSON-LD structured data, OpenGraph, Twitter cards
-- **AEO Ready** — FAQ schema, breadcrumbs, article markup for AI search engines
-- **Scroll Animations** — Intersection Observer-powered reveal animations on every section
-- **Responsive** — Mobile-first design with bottom navigation bar on mobile
-- **Blog System** — Dynamic blog posts with individual pages, share buttons, and CTA
-- **Glass Morphism** — Frosted glass header that adapts on scroll
-- **WhatsApp Integration** — Floating WhatsApp contact button
-- **Accessible** — Focus-visible styles, semantic HTML, ARIA labels, reduced motion support
+- **🌐 Full Bilingual (EN/NP)** — Complete English and Nepali translations with one-click language toggle and persistent locale routing (`/en`, `/ne`).
+- **🎨 Multi-Theme Engine & Custom Palettes** — 8 presets (Classic Construction, OLED Obsidian, Midnight Navy, Emerald Forest, Sepia Earth, Ocean Cyan, Coral Rose, and Custom Palette) with a real-time HEX color picker.
+- **📱 iOS HIG Design System** — Cupertino-style bottom navigation, frosted glassmorphism headers, tactile iOS toggle switches, segmented cards, and bottom sheet settings modal.
+- **🔊 Synthesized Web Audio & Haptics** — Zero-asset, zero-latency Web Audio API sound synthesis (tap, nav, success, clink, rumble) + mobile vibration haptic feedback.
+- **🏗️ Construction Page Transitions** — Custom animated transitions including Crane Cable Drop, Safety Tape Wipe, and Concrete Pour.
+- **🚜 Heavy Equipment Rental Catalog** — Showcase and quotation engine for excavators, road rollers, motor graders, backhoe loaders, tipper trucks, and tractors with high-res photography and technical specs.
+- **🚀 Advanced SEO, AEO & GEO** — Optimized for Google Sitelinks, Bing, Perplexity, OpenAI SearchGPT, and Applebot:
+  - Dynamic sitemaps with multilingual `hreflang` alternates and indexed images.
+  - Generative Engine Optimization (GEO) & Answer Engine Optimization (AEO) with `FAQPage`, `GeneralContractor`, `WebSite` Sitelinks SearchBox, `SiteNavigationElement`, `OfferCatalog`, `ServicesCatalog`, and `BlogPosting` schemas.
+  - Comprehensive `robots.txt` granting explicit crawl access to AI answer bots (`GPTBot`, `PerplexityBot`, `ClaudeBot`, etc.).
+- **📰 Technical Engineering Blog** — Markdown & JSON powered technical articles with bilingual content, reading times, share buttons, and Article structured data.
+- **⚡ PWA Ready** — Installable Progressive Web App with service worker offline caching and app shortcuts.
 
-## Tech Stack
+---
+
+## 🛠️ Tech Stack
 
 | Layer | Technology |
 |-------|------------|
-| Framework | Next.js 16 (App Router) |
-| UI Library | React 19 |
-| Language | TypeScript 5 |
-| Styling | Tailwind CSS v4 |
-| Animations | Intersection Observer + CSS keyframes |
-| Fonts | Geist Sans, Geist Mono |
-| SEO | JSON-LD, OpenGraph, dynamic sitemap |
-| Deployment | Vercel |
+| **Framework** | Next.js 16 (App Router with Server & Client Components) |
+| **UI Library** | React 19 |
+| **Language** | TypeScript 5 (Strict Mode) |
+| **Styling** | Tailwind CSS v4 + Custom iOS HIG Tokens |
+| **Audio / Haptics** | Web Audio API Oscillator Nodes + Navigator Vibration API |
+| **Structured Data** | Schema.org JSON-LD Entity Graph |
+| **Fonts** | Geist Sans, Geist Mono |
+| **Deployment** | Vercel |
 
-## Getting Started
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
 
-- Node.js 18+
+- Node.js 18+ or 20+
 - npm, pnpm, or yarn
 
 ### Installation
@@ -75,133 +82,105 @@ Create a `.env.local` file:
 NEXT_PUBLIC_SITE_URL=https://arun-builder.vercel.app
 ```
 
-### Build for Production
+### Production Build
 
 ```bash
 npm run build
 npm start
 ```
 
-## Project Structure
+---
+
+## 📂 Project Architecture
 
 ```
 src/
 ├── app/
 │   ├── [lang]/
-│   │   ├── layout.tsx              # Language layout with SEO metadata
-│   │   ├── page.tsx                # Home page
-│   │   ├── about/page.tsx          # About page
-│   │   ├── services/page.tsx       # Services page
-│   │   ├── equipment-rental/page.tsx
-│   │   ├── projects/page.tsx       # Projects showcase
-│   │   ├── contact/page.tsx        # Contact page
+│   │   ├── layout.tsx              # Multilingual layout + SEO & Structured Data
+│   │   ├── page.tsx                # Homepage + Hero + Project & Service previews
+│   │   ├── about/page.tsx          # About page + 1978 legacy timeline
+│   │   ├── services/page.tsx       # Services showcase + ServicesCatalog schema
+│   │   ├── equipment-rental/page.tsx # Heavy equipment catalog + spec sheets
+│   │   ├── projects/page.tsx       # Filterable project portfolio grid
+│   │   ├── contact/page.tsx        # Consultation & quote request forms
 │   │   └── blog/
-│   │       ├── page.tsx            # Blog index
-│   │       └── [slug]/page.tsx     # Blog post detail
-│   ├── globals.css                 # Theme system + animations
-│   ├── layout.tsx                  # Root layout with favicon + SEO
-│   ├── sitemap.ts                  # Dynamic sitemap
-│   └── robots.ts                   # Robots.txt
+│   │       ├── page.tsx            # Technical engineering blog index
+│   │       └── [slug]/page.tsx     # Article detail + Article JSON-LD
+│   ├── globals.css                 # 8-theme palettes, iOS HIG tokens & animations
+│   ├── layout.tsx                  # Root metadata + favicons + font definitions
+│   ├── sitemap.ts                  # Dynamic image & multilingual sitemap generator
+│   └── robots.ts                   # Robots.txt with Search & AI Crawler rules
 ├── components/
-│   ├── Header.tsx                  # Glass morphism header + mobile nav
-│   ├── Footer.tsx                  # 3-column footer
-│   ├── ThemeProvider.tsx            # Dark/light toggle
-│   ├── AnimatedSection.tsx         # Scroll reveal wrapper
-│   ├── ScrollToTop.tsx             # Scroll reset on navigation
-│   ├── ProjectGrid.tsx             # Searchable project grid
-│   └── JsonLd.tsx                  # JSON-LD structured data
+│   ├── Header.tsx                  # Glassmorphic Cupertino header + theme/audio controls
+│   ├── Footer.tsx                  # 3-column trust & contact footer
+│   ├── ThemeProvider.tsx            # Multi-palette theme engine with hex brand customization
+│   ├── SettingsContext.tsx          # User preferences state manager
+│   ├── SettingsPanel.tsx           # iOS bottom sheet modal with live swatch & transition picker
+│   ├── CraneTransition.tsx         # Construction crane cable drop transition
+│   ├── SafetyTapeWipe.tsx          # Hazard safety tape page wipe
+│   ├── ConcretePour.tsx            # Concrete pour stone wash transition
+│   ├── AnimatedSection.tsx         # Intersection Observer scroll reveal wrapper
+│   ├── TextReveal.tsx              # Staggered typography reveals
+│   ├── ProjectGrid.tsx             # Filterable project gallery
+│   └── JsonLd.tsx                  # Rich Schema.org structured data components
 ├── i18n/
-│   ├── dictionaries.ts             # i18n helper
-│   ├── en.json                     # English translations
-│   └── ne.json                     # Nepali translations
-├── lib/
-│   └── blog-posts.ts               # Blog post data
-└── middleware.ts                    # Locale redirect
+│   ├── dictionaries.ts             # Language dictionary loader
+│   ├── en.json                     # English translation dictionary
+│   └── ne.json                     # Nepali translation dictionary
+└── lib/
+    ├── blog-posts.ts               # Technical blog articles & metadata
+    └── haptics.ts                  # Web Audio API synthesizer & vibration haptics
 ```
 
-## SEO / AEO Features
+---
 
-- **Dynamic Sitemap** — `/sitemap.xml` with all routes and i18n alternates
-- **Robots.txt** — `/robots.txt` with crawl rules
-- **JSON-LD** — Organization, LocalBusiness, WebSite, BreadcrumbList, Article schemas
-- **OpenGraph** — Full OG metadata per page for social sharing
-- **Twitter Cards** — Summary large image cards
-- **Canonical URLs** — Proper canonical tags with hreflang alternates
-- **Metadata** — Title, description, keywords per page
+## 🎨 Theme & Palette Customization
 
-## Customization
+Sajilo Builder includes 8 built-in themes and dynamic HEX color picker capabilities:
 
-### Changing the Brand Color
+1. **Classic Construction** (`#e85d04`) — High-visibility safety orange
+2. **OLED Obsidian** (`#000000`) — True black contrast mode
+3. **Midnight Navy** (`#3b82f6`) — Deep navy blue with electric accents
+4. **Emerald Forest** (`#22c55e`) — Eco-friendly green and lime
+5. **Sepia Earth** (`#a0522d`) — Warm terracotta, parchment & sand
+6. **Ocean Cyan** (`#0891b2`) — Deep teal & azure
+7. **Coral Rose** (`#e11d48`) — Warm rose gold & crimson
+8. **Custom Palette** — Any user-selected HEX code injected live via CSS custom properties (`--custom-brand`, `--custom-ring`, `--custom-brand-light`) and persisted in `localStorage`.
 
-Edit the CSS custom properties in `src/app/globals.css`:
+---
 
-```css
-:root {
-  --brand: #e85d04;        /* Light mode brand color */
-  --brand-hover: #dc4c00;  /* Light mode hover state */
-  --brand-light: rgba(232, 93, 4, 0.08);
-}
+## 🔍 SEO, AEO & GEO Implementation
 
-.dark {
-  --brand: #f97316;        /* Dark mode brand color */
-  --brand-hover: #fb923c;  /* Dark mode hover state */
-  --brand-light: rgba(249, 115, 22, 0.1);
-}
-```
+- **Google Rich Sitelinks** — `SiteNavigationElement` and `ItemList` schemas structured for top-level search sitelinks.
+- **SearchAction Schema** — Integrated Sitelinks Searchbox (`WebSite` schema).
+- **AEO (Answer Engine Optimization)** — Contextual `FAQPage` schemas embedded on Home, Services, Equipment Rental, and Contact pages for instant conversational answers.
+- **GEO (Generative Engine Optimization)** — Entity graphs linking `GeneralContractor`, `Person` (Arun Neupane), `LocalBusiness`, geo-coordinates (`27.7006° N, 83.4484° E`), and social entity references (`sameAs`).
+- **Crawler Permissions** — `robots.txt` specifically configured for `Googlebot`, `Bingbot`, `Applebot`, `GPTBot`, `PerplexityBot`, and `ClaudeBot`.
 
-### Adding Blog Posts
+---
 
-Add new posts in `src/lib/blog-posts.ts`:
+## 👨‍💻 Author & Lead Architect
 
-```typescript
-{
-  slug: 'my-new-post',
-  dateEn: 'March 15, 2026',
-  dateNe: 'मार्च १५, २०२६',
-  authorEn: 'Author Name',
-  authorNe: 'लेखक नाम',
-  image: '/assets/images/my-image.webp',
-  titleEn: 'English Title',
-  titleNe: 'नेपाली शीर्षक',
-  excerptEn: 'Short description...',
-  excerptNe: 'संक्षिप्त विवरण...',
-  contentEn: ['Paragraph 1...', 'Paragraph 2...'],
-  contentNe: ['अनुच्छेद १...', 'अनुच्छेद २...'],
-}
-```
+**Arun Neupane** (`@arundada9000`)
+- **Role:** CTO & Lead Architect at [Sajilo Digital Pvt. Ltd.](https://sajilodigital.com.np)
+- **Community:** Vice Secretary at Code for Change Rupandehi | BMC IT Club
+- **Location:** Butwal, Lumbini, Nepal (NPT / UTC+5:45)
+- **Portfolio:** [arunneupane.vercel.app](https://arunneupane.vercel.app)
+- **Email:** [arunneupane0000@gmail.com](mailto:arunneupane0000@gmail.com)
+- **Phone / WhatsApp:** [+977 9811420975](https://wa.me/9779811420975)
 
-### Translations
+### Social Connect
+- **GitHub:** [@arundada9000](https://github.com/arundada9000)
+- **LinkedIn:** [in/arundada9000](https://www.linkedin.com/in/arundada9000)
+- **X (Twitter):** [@arundada9000](https://x.com/arundada9000)
+- **YouTube:** [@arundada9000](https://www.youtube.com/@arundada9000)
+- **Instagram:** [@arundada9000](https://www.instagram.com/arundada9000)
+- **Facebook:** [arundada9000](https://www.facebook.com/arundada9000)
 
-Edit `src/i18n/en.json` and `src/i18n/ne.json` to update text content. Both files share the same structure.
+---
 
-## Available Routes
+## 📄 License
 
-| Route | Description |
-|-------|-------------|
-| `/en` | Home (English) |
-| `/ne` | Home (Nepali) |
-| `/en/about` | About page |
-| `/en/services` | Services page |
-| `/en/equipment-rental` | Equipment rental |
-| `/en/projects` | Projects showcase |
-| `/en/blog` | Blog index |
-| `/en/blog/[slug]` | Blog post detail |
-| `/en/contact` | Contact page |
-| `/sitemap.xml` | Dynamic sitemap |
-| `/robots.txt` | Robots.txt |
+This project is open source and available under the [MIT License](LICENSE).
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Author
-
-**Arun Neupane** — CTO & Lead Architect at Sajilo Digital Pvt. Ltd. (parent company of Sajilo Builder)
-
-- Website: [sajilodigital.com.np](https://sajilodigital.com.np)
-- GitHub: [@arundada9000](https://github.com/arundada9000)
-- LinkedIn: [in/arundada9000](https://www.linkedin.com/in/arundada9000)
-- X: [@arundada9000](https://x.com/arundada9000)
-- YouTube: [@arundada9000](https://www.youtube.com/@arundada9000)
-- Email: arunneupane0000@gmail.com
-- Phone/WhatsApp: +977 9811420975

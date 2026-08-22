@@ -1,7 +1,7 @@
 {
-  "name": "sajilo-digital-website",
-  "version": "1.0.0",
-  "description": "Sajilo Builder - Modern bilingual (EN/NP) construction company website with dark/light theme, SEO optimization, and scroll animations",
+  "name": "sajilo-builder",
+  "version": "1.1.0",
+  "description": "Sajilo Builder - Modern bilingual (EN/NP) construction company website and heavy equipment rental platform with multi-theme engine, Web Audio cues, and SEO/AEO/GEO optimization",
   "private": true,
   "author": {
     "name": "Arun Neupane",
