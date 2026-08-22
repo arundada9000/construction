@@ -103,7 +103,7 @@ function LangSwitch({
 export default function Header({ dict, lang }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const { theme, toggle } = useTheme();
+  const { isDark, toggleDark } = useTheme();
   const { openPanel } = useSettings();
   const pathname = usePathname();
 
@@ -211,7 +211,7 @@ export default function Header({ dict, lang }: HeaderProps) {
             </button>
 
             <button
-              onClick={() => { hapticTap(); playTap(); toggle(); }}
+              onClick={() => { hapticTap(); playTap(); toggleDark(); }}
               className="relative flex ios-touch items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted ios-press"
               aria-label="Toggle theme"
             >
@@ -221,8 +221,8 @@ export default function Header({ dict, lang }: HeaderProps) {
                     className="absolute transition-all duration-500"
                     style={{
                       transitionTimingFunction: EASE,
-                      transform: theme === 'dark' ? 'rotate(0deg) scale(1)' : 'rotate(-90deg) scale(0)',
-                      opacity: theme === 'dark' ? 1 : 0,
+                      transform: isDark ? 'rotate(0deg) scale(1)' : 'rotate(-90deg) scale(0)',
+                      opacity: isDark ? 1 : 0,
                     }}
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground">
@@ -233,8 +233,8 @@ export default function Header({ dict, lang }: HeaderProps) {
                     className="absolute transition-all duration-500"
                     style={{
                       transitionTimingFunction: EASE,
-                      transform: theme === 'light' ? 'rotate(0deg) scale(1)' : 'rotate(90deg) scale(0)',
-                      opacity: theme === 'light' ? 1 : 0,
+                      transform: !isDark ? 'rotate(0deg) scale(1)' : 'rotate(90deg) scale(0)',
+                      opacity: !isDark ? 1 : 0,
                     }}
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground">
@@ -279,7 +279,7 @@ export default function Header({ dict, lang }: HeaderProps) {
             </button>
 
             <button
-              onClick={() => { hapticTap(); playTap(); toggle(); }}
+              onClick={() => { hapticTap(); playTap(); toggleDark(); }}
               className="relative flex ios-touch items-center justify-center rounded-full transition-colors duration-200 hover:bg-muted ios-press"
               aria-label="Toggle theme"
             >
@@ -289,8 +289,8 @@ export default function Header({ dict, lang }: HeaderProps) {
                     className="absolute transition-all duration-500"
                     style={{
                       transitionTimingFunction: EASE,
-                      transform: theme === 'dark' ? 'rotate(0deg) scale(1)' : 'rotate(-90deg) scale(0)',
-                      opacity: theme === 'dark' ? 1 : 0,
+                      transform: isDark ? 'rotate(0deg) scale(1)' : 'rotate(-90deg) scale(0)',
+                      opacity: isDark ? 1 : 0,
                     }}
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground">
@@ -301,8 +301,8 @@ export default function Header({ dict, lang }: HeaderProps) {
                     className="absolute transition-all duration-500"
                     style={{
                       transitionTimingFunction: EASE,
-                      transform: theme === 'light' ? 'rotate(0deg) scale(1)' : 'rotate(90deg) scale(0)',
-                      opacity: theme === 'light' ? 1 : 0,
+                      transform: !isDark ? 'rotate(0deg) scale(1)' : 'rotate(90deg) scale(0)',
+                      opacity: !isDark ? 1 : 0,
                     }}
                   >
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-foreground">
