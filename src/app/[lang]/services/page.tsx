@@ -3,21 +3,79 @@ import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import AnimatedSection from '@/components/AnimatedSection';
 import TextReveal from '@/components/TextReveal';
 import Link from 'next/link';
-import { BreadcrumbJsonLd } from '@/components/JsonLd';
+import { BreadcrumbJsonLd, ServicesCatalogJsonLd, FAQJsonLd } from '@/components/JsonLd';
 
 type Props = { params: Promise<{ lang: string }> };
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
+
+const servicesFaqs = [
+  {
+    question: 'What types of buildings does Sajilo Builder construct in Nepal?',
+    answer:
+      'We deliver turnkey construction for regional hospitals, educational campuses, hotels, commercial office complexes, industrial factories, and residential structures adhering to Nepal building codes.',
+  },
+  {
+    question: 'How do you handle challenging terrain for road and bridge projects?',
+    answer:
+      'Our civil engineering teams employ specialized cut-and-fill techniques, gabion retaining structures, geotechnical slope stabilization, and heavy earthmoving machinery optimized for Nepal hilly and mountainous topography.',
+  },
+  {
+    question: 'What is your capability in hydropower civil engineering?',
+    answer:
+      'We handle tunnel excavation support, portal consolidation, powerhouse civil structures, spillways, intake channels, and penstock pipe foundations with strict safety controls.',
+  },
+];
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  const title = lang === 'ne' ? 'सेवाहरू' : 'Our Services';
+  const title = lang === 'ne'
+    ? 'हाम्रा निर्माण सेवाहरू - भवन, सडक, पुल, जलविद्युत'
+    : 'Civil Construction Services | Building, Roads, Bridges & Hydropower';
   const desc = lang === 'ne'
-    ? 'भवन निर्माण, सडक पूर्वाधार, पुल निर्माण, र जलविद्युत सिविल कार्य सेवाहरू।'
-    : 'Building construction, road infrastructure, bridge construction, and hydropower civil works services.';
+    ? 'सजिलो बिल्डर - अस्पताल तथा भवन निर्माण, सडक पूर्वाधार, पुल तथा कल्वर्ट निर्माण र जलविद्युत सिविल कार्य सेवाहरू।'
+    : 'Sajilo Builder provides end-to-end building construction, road infrastructure, RCC bridges, and hydropower civil works across Nepal with strict QA/QC standards.';
+
   return {
     title,
     description: desc,
-    alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/services` },
-    openGraph: { title, description: desc, url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/services` },
+    keywords: [
+      'civil construction services Nepal',
+      'building contractor Butwal Kathmandu',
+      'road infrastructure developer',
+      'RCC bridge engineering Nepal',
+      'hydropower civil works',
+      'hospital building construction',
+      'commercial property contractor Nepal',
+    ],
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/services`,
+      languages: {
+        en: `${BASE_URL}/en/services`,
+        ne: `${BASE_URL}/ne/services`,
+      },
+    },
+    openGraph: {
+      title,
+      description: desc,
+      url: `${BASE_URL}/${lang}/services`,
+      type: 'website',
+      images: [
+        {
+          url: `${BASE_URL}/assets/images/services/building-construction.webp`,
+          width: 1200,
+          height: 630,
+          alt: 'Civil Construction Services - Sajilo Builder',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: desc,
+      images: [`${BASE_URL}/assets/images/services/building-construction.webp`],
+      creator: '@arundada9000',
+    },
   };
 }
 
@@ -122,6 +180,8 @@ export default async function ServicesPage({ params }: Props) {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: 'Home', url: `/${lang}` }, { name: 'Services', url: `/${lang}/services` }]} />
+      <ServicesCatalogJsonLd lang={lang} />
+      <FAQJsonLd faqs={servicesFaqs} />
       {/* ─── Hero Section ─── */}
       <section className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">

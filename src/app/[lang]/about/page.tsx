@@ -7,17 +7,55 @@ import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 type Props = { params: Promise<{ lang: string }> };
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  const title = lang === 'ne' ? 'हाम्रो बारेमा' : 'About Us';
+  const title = lang === 'ne'
+    ? 'हाम्रो बारेमा - विरासत, टोली र गुणस्तर प्रतिबद्धता'
+    : 'About Sajilo Builder | Legacy, Engineering Excellence & Leadership';
   const desc = lang === 'ne'
-    ? 'सजिलो डिजिटल प्रा. लि. - गुणस्तर, नवप्रवर्तन, र जवाफदेहितामा केन्द्रित डिजिटल समाधान।'
-    : 'Sajilo Builder by Sajilo Digital Pvt. Ltd. - Construction and digital solutions focused on quality, innovation, and accountability.';
+    ? 'सजिलो बिल्डर (सजिलो डिजिटल प्रा. लि.) - १९७८ देखि गुणस्तर, सुरक्षा र जवाफदेहितामा आधारित निर्माण सेवा।'
+    : 'Learn about Sajilo Builder (Sajilo Digital Pvt. Ltd.): Founded in 1978, trusted across public and private sectors in Nepal for construction excellence, engineering, and reliability.';
+
   return {
     title,
     description: desc,
-    alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/about` },
-    openGraph: { title, description: desc, url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/about` },
+    keywords: [
+      'about Sajilo Builder',
+      'construction contractor legacy Nepal',
+      'Sajilo Digital Pvt. Ltd.',
+      'Arun Neupane CTO',
+      'civil engineers Butwal Nepal',
+    ],
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/about`,
+      languages: {
+        en: `${BASE_URL}/en/about`,
+        ne: `${BASE_URL}/ne/about`,
+      },
+    },
+    openGraph: {
+      title,
+      description: desc,
+      url: `${BASE_URL}/${lang}/about`,
+      type: 'website',
+      images: [
+        {
+          url: `${BASE_URL}/assets/images/home/quality-safety.webp`,
+          width: 1200,
+          height: 630,
+          alt: 'About Sajilo Builder - Construction Excellence',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: desc,
+      images: [`${BASE_URL}/assets/images/home/quality-safety.webp`],
+      creator: '@arundada9000',
+    },
   };
 }
 

@@ -2,21 +2,72 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import AnimatedSection from '@/components/AnimatedSection';
-import { BreadcrumbJsonLd } from '@/components/JsonLd';
+import { BreadcrumbJsonLd, FAQJsonLd } from '@/components/JsonLd';
 
 type Props = { params: Promise<{ lang: string }> };
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
+
+const contactFaqs = [
+  {
+    question: 'How can I request a project quotation or equipment rental estimate?',
+    answer:
+      'You can submit the consultation request form on this page, email us directly at arunneupane0000@gmail.com, or message/call our hotline via WhatsApp at +977 9811420975.',
+  },
+  {
+    question: 'Where is your primary office located for in-person meetings?',
+    answer:
+      'Our registered corporate office is located in Butwal, Lumbini Province, Nepal, with active field operations in Kathmandu, Pokhara, and across nationwide project sites.',
+  },
+];
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  const title = lang === 'ne' ? 'सम्पर्क' : 'Contact Us';
+  const title = lang === 'ne'
+    ? 'सम्पर्क गर्नुहोस् - निर्माण परामर्श तथा उपकरण बुकिङ'
+    : 'Contact Sajilo Builder | Office Location, Phone, Email & WhatsApp';
   const desc = lang === 'ne'
-    ? 'सजिलो डिजिटल प्रा. लि. सँग सम्पर्क गर्नुहोस् - बुटवल, लुम्बिनी, नेपाल।'
-    : 'Contact Sajilo Builder by Sajilo Digital Pvt. Ltd. - Butwal, Lumbini, Nepal.';
+    ? 'सजिलो बिल्डर (सजिलो डिजिटल प्रा. लि.) - सम्पर्क नम्बर +९७७ ९८११४२०९७५, इमेल arunneupane0000@gmail.com, बुटवल, नेपाल।'
+    : 'Contact Sajilo Builder (Sajilo Digital Pvt. Ltd.) in Butwal, Nepal. Call/WhatsApp +977 9811420975 or email arunneupane0000@gmail.com for construction consultation and machinery rental.';
+
   return {
     title,
     description: desc,
-    alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/contact` },
-    openGraph: { title, description: desc, url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/contact` },
+    keywords: [
+      'contact Sajilo Builder',
+      'construction contractor phone number Nepal',
+      'Arun Neupane contact',
+      'Butwal construction office address',
+      'equipment hire booking Nepal',
+    ],
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/contact`,
+      languages: {
+        en: `${BASE_URL}/en/contact`,
+        ne: `${BASE_URL}/ne/contact`,
+      },
+    },
+    openGraph: {
+      title,
+      description: desc,
+      url: `${BASE_URL}/${lang}/contact`,
+      type: 'website',
+      images: [
+        {
+          url: `${BASE_URL}/assets/images/home/hero.webp`,
+          width: 1200,
+          height: 630,
+          alt: 'Contact Sajilo Builder - Butwal, Nepal',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: desc,
+      images: [`${BASE_URL}/assets/images/home/hero.webp`],
+      creator: '@arundada9000',
+    },
   };
 }
 
@@ -29,6 +80,7 @@ export default async function ContactPage({ params }: Props) {
   return (
     <>
       <BreadcrumbJsonLd items={[{ name: 'Home', url: `/${lang}` }, { name: 'Contact', url: `/${lang}/contact` }]} />
+      <FAQJsonLd faqs={contactFaqs} />
       {/* ── Hero ── */}
       <section className="relative min-h-[90vh] overflow-hidden">
         <img

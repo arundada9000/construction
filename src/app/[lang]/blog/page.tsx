@@ -9,6 +9,8 @@ type Props = {
   params: Promise<{ lang: string }>;
 };
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
+
 export async function generateMetadata({
   params,
 }: {
@@ -17,14 +19,51 @@ export async function generateMetadata({
   const { lang } = await params;
   const locale = lang as Locale;
   const dict = getDictionary(locale);
+
+  const title = lang === 'ne'
+    ? 'निर्माण ब्लग तथा प्राविधिक स्रोतहरू'
+    : 'Construction Insights & Technical Resources | Sajilo Builder';
+  const desc = lang === 'ne'
+    ? 'नेपाली निर्माण क्षेत्रमा सुरक्षा प्रोटोकल, गुणस्तर नियन्त्रण, पुल इन्जिनियरिङ र दिगो पूर्वाधार सम्बन्धी लेखहरू।'
+    : 'Articles and engineering guides on multi-story site safety protocols, bridge quality control, sustainable concrete, and Nepali infrastructure.';
+
   return {
-    title: dict.insights.title,
-    description: dict.insights.subtitle,
-    alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/blog` },
+    title,
+    description: desc,
+    keywords: [
+      'construction blog Nepal',
+      'civil engineering guides',
+      'site safety protocols Nepal',
+      'bridge QA/QC Nepal',
+      'construction trends Nepal',
+    ],
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/blog`,
+      languages: {
+        en: `${BASE_URL}/en/blog`,
+        ne: `${BASE_URL}/ne/blog`,
+      },
+    },
     openGraph: {
-      title: dict.insights.title,
-      description: dict.insights.subtitle,
-      url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/blog`,
+      title,
+      description: desc,
+      url: `${BASE_URL}/${lang}/blog`,
+      type: 'website',
+      images: [
+        {
+          url: `${BASE_URL}/assets/images/services/building-construction.webp`,
+          width: 1200,
+          height: 630,
+          alt: 'Construction Insights & Technical Resources',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: desc,
+      images: [`${BASE_URL}/assets/images/services/building-construction.webp`],
+      creator: '@arundada9000',
     },
   };
 }

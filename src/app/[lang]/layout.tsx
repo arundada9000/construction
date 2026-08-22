@@ -12,6 +12,7 @@ import {
   OrganizationJsonLd,
   LocalBusinessJsonLd,
   WebsiteJsonLd,
+  SiteNavigationJsonLd,
 } from '@/components/JsonLd';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
@@ -28,28 +29,41 @@ export async function generateMetadata({
   const { lang } = await params;
   const dict = getDictionary(lang as Locale);
 
+  const title = lang === 'ne'
+    ? 'सजिलो बिल्डर - नेपालको अग्रणी निर्माण र भारी उपकरण भाडा सेवा'
+    : 'Sajilo Builder | Leading Construction & Heavy Equipment Rental in Nepal';
+
+  const description = lang === 'ne'
+    ? 'सजिलो बिल्डर (सजिलो डिजिटल प्रा. लि.) - अस्पताल, भवन, सडक, पुल, जलविद्युत निर्माण र एक्स्काभेटर, रोलर, ग्रेडर उपकरण भाडा सेवा। बुटवल, काठमाडौं, पोखरा, नेपाल।'
+    : 'Sajilo Builder by Sajilo Digital Pvt. Ltd. — Premier civil construction, hospital infrastructure, roads, bridges, hydropower civil works, and heavy equipment rental in Nepal.';
+
   return {
     metadataBase: new URL(BASE_URL),
     title: {
-      default: dict.meta.title,
+      default: title,
       template: `%s | Sajilo Builder`,
     },
-    description: dict.meta.description,
+    description,
     keywords: [
-      'digital solutions',
-      'web development',
-      'project management',
-      'Nepal',
+      'construction company Nepal',
+      'heavy equipment rental Nepal',
+      'excavator rental Butwal',
+      'building contractor Nepal',
+      'civil engineering Nepal',
+      'road construction contractor',
+      'bridge construction Nepal',
+      'hydropower civil works Nepal',
       'Sajilo Builder',
-      'IT company Nepal',
-      'Next.js development',
-      'React development',
-      'Butwal',
-      'Lumbini',
+      'Sajilo Digital Pvt Ltd',
+      'Arun Neupane',
+      'construction services Butwal Lumbini',
+      'hospital building contractor Nepal',
+      'roller compactor rental',
+      'tipper truck rental Nepal',
     ],
     authors: [{ name: 'Arun Neupane', url: 'https://arunneupane.vercel.app' }],
     creator: 'Arun Neupane',
-    publisher: 'Sajilo Builder',
+    publisher: 'Sajilo Digital Pvt. Ltd.',
     robots: {
       index: true,
       follow: true,
@@ -66,33 +80,33 @@ export async function generateMetadata({
       languages: {
         en: `${BASE_URL}/en`,
         ne: `${BASE_URL}/ne`,
+        'x-default': `${BASE_URL}/en`,
       },
     },
     openGraph: {
       type: 'website',
       locale: lang === 'ne' ? 'ne_NP' : 'en_US',
+      alternateLocale: lang === 'ne' ? ['en_US'] : ['ne_NP'],
       url: `${BASE_URL}/${lang}`,
       siteName: 'Sajilo Builder',
-      title: dict.meta.title,
-      description: dict.meta.description,
+      title,
+      description,
       images: [
         {
-          url: '/assets/images/home/hero.webp',
+          url: `${BASE_URL}/assets/images/home/hero.webp`,
           width: 1920,
           height: 1080,
-          alt: 'Sajilo Builder - Construction & Digital Solutions',
+          alt: 'Sajilo Builder - Leading Construction & Heavy Equipment Rental in Nepal',
         },
       ],
     },
     twitter: {
       card: 'summary_large_image',
-      title: dict.meta.title,
-      description: dict.meta.description,
-      images: ['/assets/images/home/hero.webp'],
+      title,
+      description,
+      images: [`${BASE_URL}/assets/images/home/hero.webp`],
       creator: '@arundada9000',
-    },
-    verification: {
-      google: 'your-google-verification-code',
+      site: '@arundada9000',
     },
   };
 }
@@ -116,6 +130,7 @@ export default async function LangLayout({
         <OrganizationJsonLd />
         <LocalBusinessJsonLd />
         <WebsiteJsonLd />
+        <SiteNavigationJsonLd lang={lang} />
         <Header dict={dict} lang={locale} />
         <main id="content" className="flex-1 pb-20 lg:pb-0">
           <PageTransition>{children}</PageTransition>

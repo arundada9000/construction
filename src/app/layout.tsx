@@ -12,32 +12,40 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Sajilo Builder - Construction & Digital Solutions by Sajilo Digital Pvt. Ltd.',
+    default: 'Sajilo Builder | Leading Construction & Heavy Equipment Rental in Nepal',
     template: '%s | Sajilo Builder',
   },
   description:
-    'Sajilo Builder by Sajilo Digital Pvt. Ltd. - Construction, civil works, web development, and project management in Butwal, Lumbini, Nepal.',
+    'Sajilo Builder by Sajilo Digital Pvt. Ltd. — Premier civil engineering, commercial building, roads, bridges, hydropower works, and excavator/heavy equipment rental in Nepal.',
   keywords: [
-    'digital solutions Nepal',
-    'web development Nepal',
-    'Next.js development',
-    'React development',
-    'project management Nepal',
-    'Sajilo Builder',
-    'IT company Nepal',
-    'Butwal IT company',
-    'Lumbini digital agency',
-    'construction project management',
+    'construction company Nepal',
+    'heavy equipment rental Nepal',
+    'excavator hire Butwal',
+    'building contractor Kathmandu',
     'civil engineering Nepal',
-    'hydropower Nepal',
-    'road infrastructure Nepal',
+    'road infrastructure construction Nepal',
+    'RCC bridge construction',
+    'hydropower civil works',
+    'Sajilo Builder',
+    'Sajilo Digital Pvt. Ltd.',
+    'Arun Neupane',
+    'construction machinery rental',
+    'commercial building contractor',
+    'hospital construction Nepal',
+    'roller compactor rental Butwal',
+    'tipper truck rental',
   ],
   authors: [{ name: 'Arun Neupane', url: 'https://arunneupane.vercel.app' }],
   creator: 'Arun Neupane',
-  publisher: 'Sajilo Builder',
+  publisher: 'Sajilo Digital Pvt. Ltd.',
+  applicationName: 'Sajilo Builder',
+  generator: 'Next.js',
+  referrer: 'origin-when-cross-origin',
   formatDetection: {
     email: false,
     address: false,
@@ -46,32 +54,38 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: '/',
+    url: SITE_URL,
     siteName: 'Sajilo Builder',
-    title: 'Sajilo Builder - Construction & Digital Solutions',
+    title: 'Sajilo Builder | Leading Construction & Heavy Equipment Rental in Nepal',
     description:
-      'Digital solutions, web development, and project management focused on quality, innovation, and accountable delivery.',
+      'Premier civil engineering, commercial & hospital building, infrastructure roads, bridges, hydropower works, and equipment rental across Nepal.',
     images: [
       {
         url: '/assets/images/home/hero.webp',
         width: 1920,
         height: 1080,
-        alt: 'Sajilo Builder - Construction & Digital Solutions',
+        alt: 'Sajilo Builder - Leading Construction & Heavy Equipment Rental in Nepal',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Sajilo Builder',
+    title: 'Sajilo Builder | Leading Construction & Heavy Equipment Rental in Nepal',
     description:
-      'Digital solutions, web development, and project management focused on quality, innovation, and accountable delivery.',
+      'Premier civil engineering, commercial building, infrastructure roads, bridges, and equipment rental in Nepal.',
     images: ['/assets/images/home/hero.webp'],
     creator: '@arundada9000',
+    site: '@arundada9000',
   },
   icons: {
-    icon: '/favicon.svg',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: '32x32' },
+    ],
     shortcut: '/favicon.svg',
-    apple: '/apple-touch-icon.png',
+    apple: [
+      { url: '/favicon.svg', sizes: '180x180', type: 'image/svg+xml' },
+    ],
   },
   manifest: '/site.webmanifest',
   robots: {
@@ -85,15 +99,20 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    google: 'your-google-verification-code',
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      en: `${SITE_URL}/en`,
+      ne: `${SITE_URL}/ne`,
+      'x-default': `${SITE_URL}/en`,
+    },
   },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-    { media: '(prefers-color-scheme: dark)', color: '#0a0a0a' },
+    { media: '(prefers-color-scheme: light)', color: '#f2f2f7' },
+    { media: '(prefers-color-scheme: dark)', color: '#000000' },
   ],
   width: 'device-width',
   initialScale: 1,

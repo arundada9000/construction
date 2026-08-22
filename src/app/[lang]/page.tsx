@@ -2,10 +2,34 @@ import Link from 'next/link';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import AnimatedSection from '@/components/AnimatedSection';
 import { posts } from '@/lib/blog-posts';
+import { FAQJsonLd } from '@/components/JsonLd';
 
 type Props = {
   params: Promise<{ lang: string }>;
 };
+
+const homeFaqs = [
+  {
+    question: 'What civil construction services does Sajilo Builder provide in Nepal?',
+    answer:
+      'Sajilo Builder specializes in end-to-end building construction (hospitals, schools, commercial towers), highway and road infrastructure, RCC bridges and culverts, and hydropower civil excavation works.',
+  },
+  {
+    question: 'Do you offer heavy construction equipment for rental in Butwal and other districts?',
+    answer:
+      'Yes, we provide heavy machinery rentals including Excavators, Roller Compactors, Motor Graders, Backhoe Loaders, Tipper Trucks, and Tractors with certified operators across Nepal.',
+  },
+  {
+    question: 'Where is Sajilo Builder headquartered and which areas do you serve?',
+    answer:
+      'Our registered office is located in Butwal, Lumbini Province, Nepal, with project operations serving Butwal, Kathmandu, Pokhara, Chitwan, Rupandehi, and nationwide infrastructure sites.',
+  },
+  {
+    question: 'How do you ensure safety and quality standards on project sites?',
+    answer:
+      'We enforce rigorous QA/QC inspection protocols, on-site certified safety officers, mandatory PPE compliance, structural material lab tests, and adherence to Nepal National Building Code (NBC).',
+  },
+];
 
 const projects = [
   {
@@ -52,6 +76,7 @@ export default async function HomePage({ params }: Props) {
 
   return (
     <>
+      <FAQJsonLd faqs={homeFaqs} />
       {/* ───────────── Hero ───────────── */}
       <section className="relative min-h-[90vh] overflow-hidden">
         <img

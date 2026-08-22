@@ -17,6 +17,8 @@ export async function generateStaticParams() {
   );
 }
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
+
 export async function generateMetadata({
   params,
 }: Props): Promise<Metadata> {
@@ -24,9 +26,42 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
   const locale = lang as Locale;
+  const title = locale === 'ne' ? post.titleNe : post.titleEn;
+  const description = locale === 'ne' ? post.excerptNe : post.excerptEn;
+  const image = post.image.startsWith('http') ? post.image : `${BASE_URL}${post.image}`;
+
   return {
-    title: locale === 'ne' ? post.titleNe : post.titleEn,
-    description: locale === 'ne' ? post.excerptNe : post.excerptEn,
+    title,
+    description,
+    authors: [{ name: locale === 'ne' ? post.authorNe : post.authorEn, url: 'https://arunneupane.vercel.app' }],
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/blog/${post.slug}`,
+      languages: {
+        en: `${BASE_URL}/en/blog/${post.slug}`,
+        ne: `${BASE_URL}/ne/blog/${post.slug}`,
+      },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `${BASE_URL}/${lang}/blog/${post.slug}`,
+      type: 'article',
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: [image],
+      creator: '@arundada9000',
+    },
   };
 }
 
@@ -42,11 +77,19 @@ export default async function BlogPostPage({ params }: Props) {
   const date = lang === 'ne' ? post.dateNe : post.dateEn;
   const author = lang === 'ne' ? post.authorNe : post.authorEn;
   const content = lang === 'ne' ? post.contentNe : post.contentEn;
-  const shareUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/blog/${post.slug}`;
+  const shareUrl = `${BASE_URL}/${lang}/blog/${post.slug}`;
 
   return (
     <>
-      <ArticleJsonLd title={lang === 'ne' ? post.titleNe : post.titleEn} description={lang === 'ne' ? post.excerptNe : post.excerptEn} image={post.image} datePublished={lang === 'ne' ? post.dateNe : post.dateEn} author={lang === 'ne' ? post.authorNe : post.authorEn} slug={post.slug} />
+      <ArticleJsonLd
+        title={title}
+        description={lang === 'ne' ? post.excerptNe : post.excerptEn}
+        image={post.image}
+        datePublished={post.dateEn}
+        author={author}
+        slug={post.slug}
+        lang={lang}
+      />
       {/* Hero */}
       <section className="relative h-[50vh] min-h-[360px] overflow-hidden">
         <img

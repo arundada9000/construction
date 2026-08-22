@@ -1,8 +1,82 @@
+import type { Metadata } from 'next';
 import { getDictionary, type Locale } from '@/i18n/dictionaries';
 import AnimatedSection from '@/components/AnimatedSection';
 import TextReveal from '@/components/TextReveal';
+import { BreadcrumbJsonLd, EquipmentCatalogJsonLd, FAQJsonLd } from '@/components/JsonLd';
 
 type Props = { params: Promise<{ lang: string }> };
+
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
+
+const equipmentFaqs = [
+  {
+    question: 'What heavy equipment is available for rent in Nepal?',
+    answer:
+      'We offer Excavators (CAT, Komatsu), Roller Compactors, Motor Graders, Backhoe Loaders (JCB), Tipper Dump Trucks, Tractors, and Water Tankers for short-term and long-term project rentals.',
+  },
+  {
+    question: 'Are operators included with the equipment rental?',
+    answer:
+      'Yes, all our machinery can be rented with certified, experienced heavy equipment operators and on-site maintenance support to guarantee peak productivity.',
+  },
+  {
+    question: 'How are rental rates calculated for construction machinery in Butwal and nationwide?',
+    answer:
+      'Rental rates are offered on hourly, daily, and monthly contractual terms with fuel-inclusive or bare-rental options depending on client requirements.',
+  },
+];
+
+export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
+  const { lang } = await params;
+  const title = lang === 'ne'
+    ? 'निर्माण उपकरण तथा मेसिनरी भाडा सेवा - एक्स्काभेटर, रोलर, ग्रेडर'
+    : 'Heavy Equipment Rental Nepal | Excavator, Roller, Grader, Backhoe Hire';
+  const desc = lang === 'ne'
+    ? 'सजिलो बिल्डर - एक्स्काभेटर, रोलर कम्प्याक्टर, मोटर ग्रेडर, ब्याकहो लोडर, टिपर ट्रक भाडा सेवा बुटवल, लुम्बिनी र नेपालभर।'
+    : 'Rent reliable construction equipment in Nepal: Excavators, Road Rollers, Motor Graders, Backhoe Loaders, and Tipper Trucks with operators. Immediate site dispatch.';
+
+  return {
+    title,
+    description: desc,
+    keywords: [
+      'heavy equipment rental Nepal',
+      'excavator hire Butwal',
+      'roller compactor rental Nepal',
+      'motor grader hire',
+      'JCB backhoe loader rental',
+      'tipper truck rental',
+      'construction machinery hire Nepal',
+    ],
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/equipment-rental`,
+      languages: {
+        en: `${BASE_URL}/en/equipment-rental`,
+        ne: `${BASE_URL}/ne/equipment-rental`,
+      },
+    },
+    openGraph: {
+      title,
+      description: desc,
+      url: `${BASE_URL}/${lang}/equipment-rental`,
+      type: 'website',
+      images: [
+        {
+          url: `${BASE_URL}/assets/images/equipment/excavator.jpg`,
+          width: 1200,
+          height: 630,
+          alt: 'Heavy Equipment Rental Nepal - Sajilo Builder',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: desc,
+      images: [`${BASE_URL}/assets/images/equipment/excavator.jpg`],
+      creator: '@arundada9000',
+    },
+  };
+}
 
 const equipment = [
   {
@@ -58,13 +132,13 @@ const equipment = [
   },
   {
     code: 'CP',
-    title: 'Compressors',
-    description: 'Portable compressed air supply for pneumatic tools, rock drilling, and site utility operations.',
+    title: 'Crusher Plant',
+    description: 'On-demand aggregate production, crushing, and screening for base course and concrete mixes.',
   },
   {
     code: 'CS',
     title: 'Chip Spreader',
-    description: 'Automated chip sealing for durable road surfaces with uniform aggregate distribution.',
+    description: 'Uniform aggregate chip distribution for surface dressing, seal coats, and road maintenance.',
   },
   {
     code: 'BC',
@@ -97,6 +171,9 @@ export default async function EquipmentRentalPage({ params }: Props) {
 
   return (
     <>
+      <BreadcrumbJsonLd items={[{ name: 'Home', url: `/${lang}` }, { name: 'Equipment Rental', url: `/${lang}/equipment-rental` }]} />
+      <EquipmentCatalogJsonLd lang={lang} />
+      <FAQJsonLd faqs={equipmentFaqs} />
       {/* Hero Section */}
       <section className="section-gradient py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

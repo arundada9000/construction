@@ -7,17 +7,55 @@ import { BreadcrumbJsonLd } from '@/components/JsonLd';
 
 type Props = { params: Promise<{ lang: string }> };
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app';
+
 export async function generateMetadata({ params }: { params: Promise<{ lang: string }> }): Promise<Metadata> {
   const { lang } = await params;
-  const title = lang === 'ne' ? 'हाम्रा परियोजनाहरू' : 'Our Projects';
+  const title = lang === 'ne'
+    ? 'हाम्रा सम्पन्न तथा जारी निर्माण परियोजनाहरू'
+    : 'Featured Construction Projects | Hospitals, Roads, Bridges & Hydropower';
   const desc = lang === 'ne'
-    ? 'हाम्रा सम्पन्न र भइरहेका निर्माण परियोजनाहरू - अस्पताल, सडक, पुल, जलविद्युत।'
-    : 'Our completed and ongoing construction projects - hospitals, roads, bridges, hydropower.';
+    ? 'सजिलो बिल्डर - क्षेत्रीय अस्पताल ब्लक, महासडक पुल खण्ड, र जलविद्युत सिविल निर्माण परियोजना पोर्टफोलियो।'
+    : 'Explore Sajilo Builder landmark construction projects across Nepal: Regional Hospitals, Highway Bridges, Institutional Facilities, and Hydropower Civil Infrastructure.';
+
   return {
     title,
     description: desc,
-    alternates: { canonical: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/projects` },
-    openGraph: { title, description: desc, url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://arun-builder.vercel.app'}/${lang}/projects` },
+    keywords: [
+      'construction projects Nepal',
+      'hospital building Pokhara Kathmandu',
+      'highway bridge construction',
+      'hydropower infrastructure Nepal',
+      'civil engineering portfolio',
+    ],
+    alternates: {
+      canonical: `${BASE_URL}/${lang}/projects`,
+      languages: {
+        en: `${BASE_URL}/en/projects`,
+        ne: `${BASE_URL}/ne/projects`,
+      },
+    },
+    openGraph: {
+      title,
+      description: desc,
+      url: `${BASE_URL}/${lang}/projects`,
+      type: 'website',
+      images: [
+        {
+          url: `${BASE_URL}/assets/images/projects/hospital.webp`,
+          width: 1200,
+          height: 630,
+          alt: 'Featured Construction Projects - Sajilo Builder',
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description: desc,
+      images: [`${BASE_URL}/assets/images/projects/hospital.webp`],
+      creator: '@arundada9000',
+    },
   };
 }
 
