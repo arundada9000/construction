@@ -1,47 +1,52 @@
 {
-  "name": "Sajilo Builder",
+  "name": "Sajilo Builder - Construction & Equipment Rental",
   "short_name": "Sajilo Builder",
-  "description": "Construction, civil works, and digital solutions by Sajilo Digital Pvt. Ltd., Butwal, Nepal.",
+  "description": "Premier civil construction, hospital infrastructure, roads, bridges, and heavy equipment rental in Nepal by Sajilo Digital Pvt. Ltd.",
   "start_url": "/en",
   "scope": "/",
   "display": "standalone",
-  "orientation": "any",
-  "background_color": "#ffffff",
-  "theme_color": "#f97316",
-  "categories": ["business", "technology", "developer tools"],
+  "orientation": "portrait-primary",
+  "background_color": "#f2f2f7",
+  "theme_color": "#e85d04",
+  "categories": ["business", "productivity", "utilities"],
   "lang": "en",
   "dir": "ltr",
-  "id": "/",
+  "id": "sajilo-builder-pwa",
   "shortcuts": [
-    {
-      "name": "Home",
-      "short_name": "Home",
-      "url": "/en",
-      "description": "Go to the homepage"
-    },
     {
       "name": "Services",
       "short_name": "Services",
       "url": "/en/services",
-      "description": "View our services"
+      "description": "Explore building, road, and bridge construction services",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Projects",
+      "name": "Equipment Rental",
+      "short_name": "Equipment",
+      "url": "/en/equipment-rental",
+      "description": "Rent excavators, road rollers, motor graders, and tippers",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Projects Showcase",
       "short_name": "Projects",
       "url": "/en/projects",
-      "description": "View our projects"
+      "description": "View completed hospital, highway, and civil engineering projects",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Contact Us",
+      "name": "Request Quote / Contact",
       "short_name": "Contact",
       "url": "/en/contact",
-      "description": "Get in touch with us"
+      "description": "Contact our engineering and estimation team",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     },
     {
-      "name": "Blog",
+      "name": "Engineering Blog",
       "short_name": "Blog",
       "url": "/en/blog",
-      "description": "Read our latest articles"
+      "description": "Read civil construction insights and safety guides",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
     }
   ],
   "icons": [
@@ -52,9 +57,27 @@
       "purpose": "any"
     },
     {
-      "src": "/favicon.svg",
-      "sizes": "any",
-      "type": "image/svg+xml",
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "maskable"
     }
   ]
