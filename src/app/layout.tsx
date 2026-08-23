@@ -108,7 +108,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'u9MIvSvtdjNvbfiVKLGy8WuFdbVe-6XRKrV7KxNPRDs',
+    google: 'y_iQncnrIS7Nycs-SFAgvF9aPPyozMkTeJhrDnmS2R0',
   },
   other: {
     'google-adsense-account': 'ca-pub-1708134460872611',
