@@ -107,6 +107,12 @@ export const metadata: Metadata = {
       'x-default': `${SITE_URL}/en`,
     },
   },
+  verification: {
+    google: 'u9MIvSvtdjNvbfiVKLGy8WuFdbVe-6XRKrV7KxNPRDs',
+  },
+  other: {
+    'google-adsense-account': 'ca-pub-1708134460872611',
+  },
 };
 
 export const viewport: Viewport = {
