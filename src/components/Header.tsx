@@ -143,21 +143,24 @@ export default function Header({ dict, lang }: HeaderProps) {
           {/* Logo */}
           <Link
             href={buildHref('/')}
-            className="flex items-center gap-0.5 text-lg font-bold tracking-tight transition-all duration-300 hover:scale-[1.04] active:scale-[0.96]"
+            translate="no"
+            suppressHydrationWarning
+            className="notranslate flex items-center gap-0.5 text-lg font-bold tracking-tight transition-all duration-300 hover:scale-[1.04] active:scale-[0.96]"
           >
-            <span className="text-foreground">Sajilo</span>
-            <span className="text-brand transition-transform duration-300 group-hover:rotate-12">.</span>
-            <span className="font-semibold text-foreground">Builder</span>
+            <span className="text-foreground" suppressHydrationWarning>Sajilo</span>
+            <span className="text-brand transition-transform duration-300 group-hover:rotate-12" suppressHydrationWarning>.</span>
+            <span className="font-semibold text-foreground" suppressHydrationWarning>Builder</span>
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden items-center gap-1 lg:flex">
+          <div className="hidden items-center gap-1 lg:flex" suppressHydrationWarning>
             {navLinks.map(({ key, path }) => {
               const active = isActive(path);
               return (
                 <Link
                   key={key}
                   href={buildHref(path)}
+                  suppressHydrationWarning
                   className="group relative ios-touch px-3 py-2 text-[13px] font-medium tracking-wide rounded-xl transition-all duration-300 ios-press hover:scale-[1.03]"
                   onClick={() => { hapticTap(); playNav(); }}
                   style={{

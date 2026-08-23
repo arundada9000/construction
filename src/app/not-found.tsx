@@ -26,7 +26,7 @@ export default function NotFound() {
       <h1 className="text-8xl font-black tracking-tighter text-brand/20 select-none" style={{ fontVariantNumeric: 'tabular-nums' }}>404</h1>
       <h2 className="text-2xl font-bold text-foreground sm:text-3xl">This page is still under construction</h2>
       <p className="max-w-md text-base text-muted-foreground">Our engineers misplaced the blueprint for this page.</p>
-      <p className="text-sm text-muted-foreground/70">Or maybe it was never built in the first place. 🤷</p>
+      <p className="text-sm text-muted-foreground/70">Or maybe it was never built in the first place.</p>
 
       <div className="mt-4 flex flex-col gap-3 sm:flex-row">
         <Link href="/en" className="btn-primary">Go Home</Link>

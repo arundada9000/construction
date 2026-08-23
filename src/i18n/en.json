@@ -87,7 +87,15 @@
     "cityOffice": "City office",
     "phone": "Phone",
     "email": "Email",
-    "copyright": "Sajilo Builder - A Sajilo Digital Pvt. Ltd. venture"
+    "copyright": "Sajilo Builder - A Sajilo Digital Pvt. Ltd. venture",
+    "getWebsite": {
+      "badge": "Custom Website Development",
+      "title": "Want a fast, modern website like this for your business?",
+      "pricePrefix": "Starting at just",
+      "price": "NPR 14,999",
+      "button": "Get This For Yourself",
+      "features": "Next.js 16 • Bilingual • iOS HIG Design • SEO Optimized"
+    }
   },
   "about": {
     "badge": "Since 1978",

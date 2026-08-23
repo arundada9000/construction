@@ -19,24 +19,24 @@ Live Demo: [arun-builder.vercel.app](https://arun-builder.vercel.app)
 
 ---
 
-## ✨ Features
+## Features
 
-- **🌐 Full Bilingual (EN/NP)** — Complete English and Nepali translations with one-click language toggle and persistent locale routing (`/en`, `/ne`).
-- **🎨 Multi-Theme Engine & Custom Palettes** — 8 presets (Classic Construction, OLED Obsidian, Midnight Navy, Emerald Forest, Sepia Earth, Ocean Cyan, Coral Rose, and Custom Palette) with a real-time HEX color picker.
-- **📱 iOS HIG Design System** — Cupertino-style bottom navigation, frosted glassmorphism headers, tactile iOS toggle switches, segmented cards, and bottom sheet settings modal.
-- **🔊 Synthesized Web Audio & Haptics** — Zero-asset, zero-latency Web Audio API sound synthesis (tap, nav, success, clink, rumble) + mobile vibration haptic feedback.
-- **🏗️ Construction Page Transitions** — Custom animated transitions including Crane Cable Drop, Safety Tape Wipe, and Concrete Pour.
-- **🚜 Heavy Equipment Rental Catalog** — Showcase and quotation engine for excavators, road rollers, motor graders, backhoe loaders, tipper trucks, and tractors with high-res photography and technical specs.
-- **🚀 Advanced SEO, AEO & GEO** — Optimized for Google Sitelinks, Bing, Perplexity, OpenAI SearchGPT, and Applebot:
+- **Full Bilingual (EN/NP)**: Complete English and Nepali translations with one-click language toggle and persistent locale routing (`/en`, `/ne`).
+- **Multi-Theme Engine and Custom Palettes**: 8 presets (Classic Construction, OLED Obsidian, Midnight Navy, Emerald Forest, Sepia Earth, Ocean Cyan, Coral Rose, and Custom Palette) with a real-time HEX color picker.
+- **iOS HIG Design System**: Cupertino-style bottom navigation, frosted glassmorphism headers, tactile iOS toggle switches, segmented cards, and bottom sheet settings modal.
+- **Synthesized Web Audio and Haptics**: Zero-asset, zero-latency Web Audio API sound synthesis (tap, nav, success, clink, rumble) plus mobile vibration haptic feedback.
+- **Construction Page Transitions**: Custom animated transitions including Crane Cable Drop, Safety Tape Wipe, and Concrete Pour.
+- **Heavy Equipment Rental Catalog**: Showcase and quotation engine for excavators, road rollers, motor graders, backhoe loaders, tipper trucks, and tractors with high-res photography and technical specs.
+- **Advanced SEO, AEO and GEO**: Optimized for Google Sitelinks, Bing, Perplexity, OpenAI SearchGPT, and Applebot:
   - Dynamic sitemaps with multilingual `hreflang` alternates and indexed images.
-  - Generative Engine Optimization (GEO) & Answer Engine Optimization (AEO) with `FAQPage`, `GeneralContractor`, `WebSite` Sitelinks SearchBox, `SiteNavigationElement`, `OfferCatalog`, `ServicesCatalog`, and `BlogPosting` schemas.
+  - Generative Engine Optimization (GEO) and Answer Engine Optimization (AEO) with `FAQPage`, `GeneralContractor`, `WebSite` Sitelinks SearchBox, `SiteNavigationElement`, `OfferCatalog`, `ServicesCatalog`, and `BlogPosting` schemas.
   - Comprehensive `robots.txt` granting explicit crawl access to AI answer bots (`GPTBot`, `PerplexityBot`, `ClaudeBot`, etc.).
-- **📰 Technical Engineering Blog** — Markdown & JSON powered technical articles with bilingual content, reading times, share buttons, and Article structured data.
-- **⚡ PWA Ready** — Installable Progressive Web App with service worker offline caching and app shortcuts.
+- **Technical Engineering Blog**: Markdown and JSON powered technical articles with bilingual content, reading times, share buttons, and Article structured data.
+- **PWA Ready**: Installable Progressive Web App with service worker offline caching and app shortcuts.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Layer | Technology |
 |-------|------------|
@@ -51,7 +51,7 @@ Live Demo: [arun-builder.vercel.app](https://arun-builder.vercel.app)
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -91,7 +91,7 @@ npm start
 
 ---
 
-## 📂 Project Architecture
+## Project Architecture
 
 ```
 src/
@@ -135,35 +135,35 @@ src/
 
 ---
 
-## 🎨 Theme & Palette Customization
+## Theme and Palette Customization
 
 Sajilo Builder includes 8 built-in themes and dynamic HEX color picker capabilities:
 
-1. **Classic Construction** (`#e85d04`) — High-visibility safety orange
-2. **OLED Obsidian** (`#000000`) — True black contrast mode
-3. **Midnight Navy** (`#3b82f6`) — Deep navy blue with electric accents
-4. **Emerald Forest** (`#22c55e`) — Eco-friendly green and lime
-5. **Sepia Earth** (`#a0522d`) — Warm terracotta, parchment & sand
-6. **Ocean Cyan** (`#0891b2`) — Deep teal & azure
-7. **Coral Rose** (`#e11d48`) — Warm rose gold & crimson
-8. **Custom Palette** — Any user-selected HEX code injected live via CSS custom properties (`--custom-brand`, `--custom-ring`, `--custom-brand-light`) and persisted in `localStorage`.
+1. **Classic Construction** (`#e85d04`) - High-visibility safety orange
+2. **OLED Obsidian** (`#000000`) - True black contrast mode
+3. **Midnight Navy** (`#3b82f6`) - Deep navy blue with electric accents
+4. **Emerald Forest** (`#22c55e`) - Eco-friendly green and lime
+5. **Sepia Earth** (`#a0522d`) - Warm terracotta, parchment and sand
+6. **Ocean Cyan** (`#0891b2`) - Deep teal and azure
+7. **Coral Rose** (`#e11d48`) - Warm rose gold and crimson
+8. **Custom Palette** - Any user-selected HEX code injected live via CSS custom properties (`--custom-brand`, `--custom-ring`, `--custom-brand-light`) and persisted in `localStorage`.
 
 ---
 
-## 🔍 SEO, AEO & GEO Implementation
+## SEO, AEO and GEO Implementation
 
-- **Google Rich Sitelinks** — `SiteNavigationElement` and `ItemList` schemas structured for top-level search sitelinks.
-- **SearchAction Schema** — Integrated Sitelinks Searchbox (`WebSite` schema).
-- **AEO (Answer Engine Optimization)** — Contextual `FAQPage` schemas embedded on Home, Services, Equipment Rental, and Contact pages for instant conversational answers.
-- **GEO (Generative Engine Optimization)** — Entity graphs linking `GeneralContractor`, `Person` (Arun Neupane), `LocalBusiness`, geo-coordinates (`27.7006° N, 83.4484° E`), and social entity references (`sameAs`).
-- **Crawler Permissions** — `robots.txt` specifically configured for `Googlebot`, `Bingbot`, `Applebot`, `GPTBot`, `PerplexityBot`, and `ClaudeBot`.
+- **Google Rich Sitelinks**: `SiteNavigationElement` and `ItemList` schemas structured for top-level search sitelinks.
+- **SearchAction Schema**: Integrated Sitelinks Searchbox (`WebSite` schema).
+- **AEO (Answer Engine Optimization)**: Contextual `FAQPage` schemas embedded on Home, Services, Equipment Rental, and Contact pages for instant conversational answers.
+- **GEO (Generative Engine Optimization)**: Entity graphs linking `GeneralContractor`, `Person` (Arun Neupane), `LocalBusiness`, geo-coordinates (`27.7006° N, 83.4484° E`), and social entity references (`sameAs`).
+- **Crawler Permissions**: `robots.txt` specifically configured for `Googlebot`, `Bingbot`, `Applebot`, `GPTBot`, `PerplexityBot`, and `ClaudeBot`.
 
 ---
 
-## 👨‍💻 Author & Lead Architect
+## Author and Lead Architect
 
 **Arun Neupane** (`@arundada9000`)
-- **Role:** CTO & Lead Architect at [Sajilo Digital Pvt. Ltd.](https://sajilodigital.com.np)
+- **Role:** CTO and Lead Architect at [Sajilo Digital Pvt. Ltd.](https://sajilodigital.com.np)
 - **Community:** Vice Secretary at Code for Change Rupandehi | BMC IT Club
 - **Location:** Butwal, Lumbini, Nepal (NPT / UTC+5:45)
 - **Portfolio:** [arunneupane.vercel.app](https://arunneupane.vercel.app)
@@ -180,7 +180,7 @@ Sajilo Builder includes 8 built-in themes and dynamic HEX color picker capabilit
 
 ---
 
-## 📄 License
+## License
 
 This project is open source and available under the [MIT License](LICENSE).
 

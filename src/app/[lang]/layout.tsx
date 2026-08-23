@@ -8,6 +8,7 @@ import ServiceWorkerRegistration from '@/components/ServiceWorkerRegistration';
 import PageTransition from '@/components/PageTransition';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import HireModal from '@/components/HireModal';
 import {
   OrganizationJsonLd,
   LocalBusinessJsonLd,
@@ -137,6 +138,7 @@ export default async function LangLayout({
         </main>
         <Footer dict={dict} lang={locale} />
         <SettingsPanel />
+        <HireModal />
       </SettingsProvider>
     </ThemeProvider>
   );

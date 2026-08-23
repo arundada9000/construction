@@ -13,7 +13,7 @@ export default function NotFound() {
           code: '४०४',
           title: 'यो पृष्ठ अझै निर्माणाधीन छ',
           joke: 'हाम्रा इन्जिनियरहरूले यो पृष्ठको नक्सा नै गुमाएका छन्।',
-          sub: 'वा सम्भवतः यो कहिल्यै बनेकै थिएन। 🤷',
+          sub: 'वा सम्भवतः यो कहिल्यै बनेकै थिएन।',
           home: 'होम पेज',
           back: 'अघि जानुहोस्',
         }
@@ -21,7 +21,7 @@ export default function NotFound() {
           code: '404',
           title: 'This page is still under construction',
           joke: 'Our engineers misplaced the blueprint for this page.',
-          sub: 'Or maybe it was never built in the first place. 🤷',
+          sub: 'Or maybe it was never built in the first place.',
           home: 'Go Home',
           back: 'Go Back',
         };

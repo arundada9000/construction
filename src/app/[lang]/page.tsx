@@ -67,8 +67,6 @@ const serviceImages = [
   '/assets/images/services/hydropower-home.webp',
 ];
 
-const serviceIcons = ['🏛️', '🛣️', '🌉', '⚡'];
-
 export default async function HomePage({ params }: Props) {
   const { lang: rawLang } = await params;
   const lang = rawLang as Locale;
